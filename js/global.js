@@ -1,0 +1,38 @@
+// Const
+// 役男分發結果，沒被分配到任何地區
+var NO_REGION_RESULT = "none";
+// file name
+var CSV_FILE_NAME = "loadCSV.php";
+// file name
+var JSON_FILE_NAME = "region.json";
+
+
+// 替代役男總數
+var TOTAL_STUDENT = 60; 
+// 役男平均分數，所有役男分數加總後除以總役男數
+var avgScore = 0.0;
+
+
+function RegionData(){
+  var name;  // 地區之中文名稱。（花蓮縣政府環保局）
+  var shortName;  // 地區之中文名稱的簡稱。（花蓮縣）
+  var englishName;  // 地區之英文名稱、變數名稱。（Hualien）
+  var available;  // 地區之役男開放名額。（2）
+  var queue;  // 選了這個地區的役男號碼，這些役男要依照分數、戶籍地等條件等待分發。（3、25、44、19）
+  var resultArray; // 分發完後，最終分配到這個地區的役男號碼。（3、19）
+}
+// 儲存 所有可供分發單位資料 的陣列，來源為 JSON。
+var regionDatas = new Array(); // Array 內的資料結構為 RegionData 
+
+
+function Student(){
+  var id; // 役男號碼。（19）
+  var home; // 役男戶籍地。（Penghu）
+  var score; // 役男分數。（87.34）
+  var wish1; // 役男第一志願，預設為 none。（Hualien）
+  var wish2; // 役男第二志願，預設為 none。（none）
+  var wish3; // 役男第三志願，預設為 none。（none）
+  var result; // 役男最後分發到的地區，預設為 none。（Hualien）
+}
+// 儲存 所有役男資料 的陣列，來源為 表格當中的 <option select>
+var students = new Array(); // Array 內的資料結構為 Student 

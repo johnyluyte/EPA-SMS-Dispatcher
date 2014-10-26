@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>環保役男志願預排</title>
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap/flaty.min.css">
+    <style type="text/css">
+      body{
+        padding:10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <input type="file" id="studentChangeFileInput"/>
+        </div>
+        <div class="panel-body" id="div_wishLists">
+        </div>
+        <div class="panel-fotter">
+          <div class="btn-group btn-group-justified">
+            <a href="" class="btn btn-primary" id="btn_saveToFile">儲存志願成檔案 (Save to file)</a>
+            <a href="" class="btn btn-success" id="btn_download">下載 (Download)</a>
+          </div>
+        </div>
+      </div>
+
+      <a href="" class="btn btn-danger btn-lg btn-block" id="btn_startDispatch">開始預排僅預排，未儲存)</a>
+
+      <hr>
+      <div id="div_resultPanel">
+      </div>
+
+      <footer>
+        環保役役男志願預分發系統.
+        Built with 
+        <a href='http://getbootstrap.com/' target='_blank'>Bootstrap</a> / 
+        <a href='http://bootswatch.com/flatly/' target='_blank'> flatly</a> / 
+        <a href='https://jquery.com/' target='_blank'>jQuery</a>. 
+        
+        By <a href='mailto:johnyluyte@gmail.com'>Chun Chien</a>, 
+        released under the <a href='http://opensource.org/licenses/MIT'>MIT License</a>.
+        Fork me on <a href=''>Github</a>.<br/>
+      </footer>        
+
+    </div> <!-- /container -->
+
+  <!-- // <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
+  <script src="lib/jquery1.11.1.min.js"></script>  
+  <script src="lib/bootstrap/bootstrap.min.js"></script>
+  <script src='js/global.js'></script>
+  <script src='js/index.js'></script>
+  <script src='js/saveFile.js'></script>
+  <script src='js/loadFile.js'></script>
+  <script src='js/algo.js'></script>
+  </body>
+</html>

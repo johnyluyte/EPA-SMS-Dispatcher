@@ -1,0 +1,188 @@
+{
+  "_comment_info": "這裡是 各地區中文名稱 與 相對應之變數名稱 的對照表，各 js 都會讀取本檔案，並以本內容為依據。",
+  "_comment_author": "有問題請聯絡 johnyluyte@gmail.com",
+  "regionLists": [
+    {
+      "id": 0,
+      "name": "本署",
+      "shortName": "本署",
+      "englishName": "EPAHome",
+      "available": 7
+    },
+    {
+      "id": 1,
+      "name": "本署環訓所",
+      "shortName": "環訓所",
+      "englishName": "EPATraining",
+      "available": 0
+    },
+    {
+      "id": 2,
+      "name": "本署環檢所",
+      "shortName": "環檢所",
+      "englishName": "EPATesting",
+      "available": 2
+    },
+    {
+      "id": 3,
+      "name": "警政署環保警察隊",
+      "shortName": "保警",
+      "englishName": "EPAPolice",
+      "available": 0
+    },
+    {
+      "id": 4,
+      "name": "基隆市環保局",
+      "shortName": "基隆市",
+      "englishName": "Keelung",
+      "available": 1
+    },
+    {
+      "id": 5,
+      "name": "台北市政府環保局",
+      "shortName": "台北市",
+      "englishName": "TaipeiCity",
+      "available": 3
+    },
+    {
+      "id": 6,
+      "name": "新北市政府環保局",
+      "shortName": "新北市",
+      "englishName": "TaipeiCounty",
+      "available": 6
+    },
+    {
+      "id": 7,
+      "name": "桃園縣政府環保局",
+      "shortName": "桃園縣",
+      "englishName": "Taoyuan",
+      "available": 6
+    },
+    {
+      "id": 8,
+      "name": "新竹市環保局",
+      "shortName": "新竹市",
+      "englishName": "HsinchuCity",
+      "available": 3
+    },
+    {
+      "id": 9,
+      "name": "新竹縣政府環保局",
+      "shortName": "新竹縣",
+      "englishName": "HsinchuCounty",
+      "available": 2
+    },
+    {
+      "id": 10,
+      "name": "苗栗縣政府環保局",
+      "shortName": "苗栗縣",
+      "englishName": "Miaoli",
+      "available": 2
+    },
+    {
+      "id": 11,
+      "name": "台中市政府環保局",
+      "shortName": "臺中市",
+      "englishName": "Taichung",
+      "available": 3
+    },
+    {
+      "id": 12,
+      "name": "彰化縣環保局",
+      "shortName": "彰化縣",
+      "englishName": "Changhua",
+      "available": 5
+    },
+    {
+      "id": 13,
+      "name": "南投縣政府環保局",
+      "shortName": "南投縣",
+      "englishName": "Nantou",
+      "available": 0
+    },
+    {
+      "id": 14,
+      "name": "雲林縣環保局",
+      "shortName": "雲林縣",
+      "englishName": "Yunlin",
+      "available": 2
+    },
+    {
+      "id": 15,
+      "name": "嘉義市環境保護局",
+      "shortName": "嘉義市",
+      "englishName": "ChiayiCity",
+      "available": 1
+    },
+    {
+      "id": 16,
+      "name": "嘉義縣環保局",
+      "shortName": "嘉義縣",
+      "englishName": "ChiayiCounty",
+      "available": 1
+    },
+    {
+      "id": 17,
+      "name": "台南市政府環保局",
+      "shortName": "臺南市",
+      "englishName": "Tainan",
+      "available": 5
+    },
+    {
+      "id": 18,
+      "name": "高雄市政府環保局",
+      "shortName": "高雄市",
+      "englishName": "Kaohsiung",
+      "available": 3
+    },
+    {
+      "id": 19,
+      "name": "高雄市政府海洋局",
+      "shortName": "高雄海洋",
+      "englishName": "KaohsiungSea",
+      "available": 2
+    },
+    {
+      "id": 20,
+      "name": "屏東縣環保局",
+      "shortName": "屏東縣",
+      "englishName": "Pingtung",
+      "available": 0
+    },
+    {
+      "id": 21,
+      "name": "宜蘭縣政府環保局",
+      "shortName": "宜蘭縣",
+      "englishName": "Yilan",
+      "available": 3
+    },
+    {
+      "id": 22,
+      "name": "花蓮縣環保局",
+      "shortName": "花蓮縣",
+      "englishName": "Hualien",
+      "available": 1
+    },
+    {
+      "id": 23,
+      "name": "台東縣環保局",
+      "shortName": "台東縣",
+      "englishName": "Taitung",
+      "available": 1
+    },
+    {
+      "id": 24,
+      "name": "澎湖縣政府環保局",
+      "shortName": "澎湖縣",
+      "englishName": "Penghu",
+      "available": 1
+    },
+    {
+      "id": 25,
+      "name": "連江縣政府環保局",
+      "shortName": "連江縣",
+      "englishName": "Lienchiang",
+      "available": 0
+    }
+  ]
+}
