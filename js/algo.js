@@ -31,9 +31,9 @@ function initAlgo(){
     student.result = NO_REGION_RESULT;
     // Add to lists
     students[i-1] = student;
-    avgScore += parseInt(student.score);
+    // parserInt() used to cause lost of digits. Fixed: 2014, Oct 29
+    avgScore += parseFloat(student.score);
   }
-
   avgScore = avgScore/TOTAL_STUDENT;
   var size = Math.pow(10, 2);
   avgScore = Math.round(avgScore * size) / size;
