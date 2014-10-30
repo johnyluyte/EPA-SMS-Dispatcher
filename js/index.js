@@ -104,11 +104,11 @@ function createWishListsTab(studentIdBegin){
       break;
     }
     string += '<tr><td>'+ i + '</td>';
-    string += '<td>'+ addSelectTable(i,0,"home") + '</td>'; 
-    string += '<td>'+ '<input disabled class="score" id="score'+ i + '" value="0" />' + '</td>';
-    string += '<td>'+ addSelectTable(i,1,"normal") + '</td>';
-    string += '<td>'+ addSelectTable(i,2,"normal") + '</td>';
-    string += '<td>'+ addSelectTable(i,3,"normal") + '</td></tr>';
+    string += '<td>'+ addSelectTable(i,0) + '</td>'; 
+    string += '<td>'+ '<input class="score" id="score'+ i + '" value="0" />' + '</td>';
+    string += '<td>'+ addSelectTable(i,1) + '</td>';
+    string += '<td>'+ addSelectTable(i,2) + '</td>';
+    string += '<td>'+ addSelectTable(i,3) + '</td></tr>';
   }
   string += '</tbody></table>';
 
@@ -119,10 +119,10 @@ function createWishListsTab(studentIdBegin){
 // parameter studentID:從 1 到 TOTAL_STUDENT，注意不是從 0，是從 1
 // parameter wishList:0為戶籍地、123依序為志願一二三
 // parameter <select> 的 id 會以 wishList1_0 ~ wishList1_3 , wishList60_0 ~ wishList60_3 的方式呈現
-function addSelectTable(studentID, wishList, format){
+function addSelectTable(studentID, wishList){
   var tmp = '<select ';
-  if(format=="home"){
-    tmp += ' disabled ';
+  if(wishList==0){
+    // tmp += ' disabled ';
   }
   tmp += 'data-placeholder="--" style="width: 180px" class="chosen-select" tabindex="-1"';
   tmp += 'id="wishList'+ studentID + '_' + wishList +'" >';
@@ -148,7 +148,7 @@ function addSelectTable(studentID, wishList, format){
     }
 
     tmp += '<option value="' + regionDatas[i].englishName + '">';
-    if(format=="home"){
+    if(wishList==0){
       // 戶籍地的話就用簡寫名稱。（花蓮縣）
       tmp += regionDatas[i].shortName + '</option>';
     }else{

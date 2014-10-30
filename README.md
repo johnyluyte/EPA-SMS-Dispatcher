@@ -33,8 +33,11 @@ To be updated.
 
 ## Todo Lists
 
-- Offline version code refactory
-- Online version
+- Offline version code refactory.
+- Should we make the "option" of a certain item disable(not choosable) if the "available" of that item is 0?
+- Online version.
+- Create a "slim" version with only 1 round.
+- Chrome modification.
 - Tutorial pages with screenshots
 
 
