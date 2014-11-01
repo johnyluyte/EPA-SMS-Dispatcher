@@ -58,13 +58,14 @@ function createWishListsNavTabs(){
   // TODO: 這裏改成 for 迴圈，並能依照 TOTAL_STUDENT 來判斷要加多少 tab。
   var string = "";
   string += '<ul class="nav nav-tabs">';
-  string += '<li class="active"><a href="#wishList10" data-toggle="tab">0-10 號</a></li>';
-  string += '<li class=""><a href="#wishList20" data-toggle="tab">10-20 號</a></li>';
-  string += '<li class=""><a href="#wishList30" data-toggle="tab">20-30 號</a></li>';
-  string += '<li class=""><a href="#wishList40" data-toggle="tab">30-40 號</a></li>';
-  string += '<li class=""><a href="#wishList50" data-toggle="tab">40-50 號</a></li>';
-  string += '<li class=""><a href="#wishList60" data-toggle="tab">50-60 號</a></li>';
-  string += '<li class=""><a href="#wishList70" data-toggle="tab">60-70 號</a></li>';
+  string += '<li class="active"><a href="#wishList10" data-toggle="tab">1-10 號</a></li>';
+  string += '<li class=""><a href="#wishList20" data-toggle="tab">11-20 號</a></li>';
+  string += '<li class=""><a href="#wishList30" data-toggle="tab">21-30 號</a></li>';
+  string += '<li class=""><a href="#wishList40" data-toggle="tab">31-40 號</a></li>';
+  string += '<li class=""><a href="#wishList50" data-toggle="tab">41-50 號</a></li>';
+  string += '<li class=""><a href="#wishList60" data-toggle="tab">51-60 號</a></li>';
+  string += '<li class=""><a href="#wishList70" data-toggle="tab">61-70 號</a></li>';
+  string += '<li class=""><a href="#wishListSetting" data-toggle="tab">設定</a></li>';
   string += '</ul>';
   string += '<div id="myTabContent" class="tab-content">';
   string += '<div class="tab-pane fade active in" id="wishList10">';
@@ -88,16 +89,23 @@ function createWishListsNavTabs(){
   string += '<div class="tab-pane fade in" id="wishList70">';
   string += createWishListsTab(70);
   string += '</div>';
+  string += '<div class="tab-pane fade in" id="wishListSetting">';
+  string += createWishListsSetting();
+  string += '</div>';
   string += '</div>';
   
   $("#div_wishLists").append(string); 
 }
 
+function createWishListsSetting(){
+  var string = '';
+  return string;
+}
 
 // 印出 學號 戶籍地 分數 志願一二三 的那整張表格。
 function createWishListsTab(studentIdBegin){
   var string = '<table class="table table-striped table-hover">';
-  string += '<thead><tr><td>學號</td><td>戶籍地</td><td>分數</td><td>志願一</td><td>志願二</td><td>志願三</td></tr></thead><tbody>';
+  string += '<thead><tr><td>學號</td><td>戶籍地</td><td>分數</td><td>志願</td><td>家因</td></tr></thead><tbody>';
 
   for(var i=studentIdBegin-9;i<=studentIdBegin;i++){
     if(i>TOTAL_STUDENT){
@@ -107,8 +115,7 @@ function createWishListsTab(studentIdBegin){
     string += '<td>'+ addSelectTable(i,0) + '</td>'; 
     string += '<td>'+ '<input class="score" id="score'+ i + '" value="0" />' + '</td>';
     string += '<td>'+ addSelectTable(i,1) + '</td>';
-    string += '<td>'+ addSelectTable(i,2) + '</td>';
-    string += '<td>'+ addSelectTable(i,3) + '</td></tr>';
+    string += '<td><input type="checkbox" name="homeFirst" value="homeFirst" >優先</td></tr>';
   }
   string += '</tbody></table>';
 

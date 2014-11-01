@@ -4,8 +4,8 @@ function initBtnStartAlgo(){
     initAlgo();
     createResultPanel("div_resultPanel");
     doRound(1);
-    doRound(2);
-    doRound(3);
+    // doRound(2);
+    // doRound(3);
     printResultPersonal("resultPersonal");
   });
 }
@@ -49,14 +49,10 @@ function createResultPanel(printToDivID){
   str += '<div class="panel-body" id="div_dispatchResult">';
   str += '<ul class="nav nav-tabs">';
   str += '<li><a href="#resultRound1" data-toggle="tab">Round 1</a></li>';
-  str += '<li><a href="#resultRound2" data-toggle="tab">Round 2</a></li>';
-  str += '<li><a href="#resultRound3" data-toggle="tab">Round 3</a></li>';
   str += '<li class="active"><a href="#resultPersonal" data-toggle="tab">分發結果(依個人)</a></li>';
   str += '</ul>';
   str += '<div id="resultTabContent" class="tab-content">';
   str += '  <div class="tab-pane fade" id="resultRound1"></div>';
-  str += '  <div class="tab-pane fade" id="resultRound2"></div>';
-  str += '  <div class="tab-pane fade" id="resultRound3"></div>';
   str += '  <div class="tab-pane fade active in" id="resultPersonal"></div>';
   str += '</div>';
   str += '</div></div>';

@@ -30,8 +30,8 @@ function Student(){
   var home; // 役男戶籍地。（Penghu）
   var score; // 役男分數。（87.34）
   var wish1; // 役男第一志願，預設為 none。（Hualien）
-  var wish2; // 役男第二志願，預設為 none。（none）
-  var wish3; // 役男第三志願，預設為 none。（none）
+  // var wish2; // 役男第二志願，預設為 none。（none）
+  // var wish3; // 役男第三志願，預設為 none。（none）
   var result; // 役男最後分發到的地區，預設為 none。（Hualien）
 }
 // 儲存 所有役男資料 的陣列，來源為 表格當中的 <option select>

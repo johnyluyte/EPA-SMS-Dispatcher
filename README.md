@@ -33,7 +33,17 @@ To be updated.
 
 ## Todo Lists
 
+- 文字顏色深一點
+- 不同順位選到的同學，用不同色塊表示
+- Should we just ignore the "englishName" attribute, and just use "name" or "shortName".
+- 版面大一點，這些可以加到新的 nav 分頁，用 toggle 的方式決定是否啟用
+  - 分數可開關
+  - 沒收人的單位就不在 round 顯示
+  - 單位只用兩個字縮寫即可
+- 按一下尚未選到地區的號碼，顯示此號碼可以蓋過其他地方的哪些人
+- 到教室投影機測試版面、顏色
 - Offline version code refactory.
+- Online version should only accepct password request from accounts with @apa.gov.tw suffix
 - Should we make the "option" of a certain item disable(not choosable) if the "available" of that item is 0?
 - Online version.
 - Create a "slim" version with only 1 round.
