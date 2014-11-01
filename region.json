@@ -5,183 +5,183 @@
     {
       "id": 0,
       "name": "本署",
+      "homeName": "本署",
       "shortName": "本署",
-      "englishName": "EPAHome",
       "available": 7
     },
     {
       "id": 1,
-      "name": "本署環訓所",
-      "shortName": "環訓所",
-      "englishName": "EPATraining",
+      "name": "環訓所",
+      "homeName": "環訓所",
+      "shortName": "環訓",
       "available": 0
     },
     {
       "id": 2,
-      "name": "本署環檢所",
-      "shortName": "環檢所",
-      "englishName": "EPATesting",
+      "name": "環檢驗所",
+      "homeName": "環檢所",
+      "shortName": "環檢",
       "available": 2
     },
     {
       "id": 3,
       "name": "警政署環保警察隊",
-      "shortName": "保警",
-      "englishName": "EPAPolice",
+      "homeName": "環警",
+      "shortName": "環警",
       "available": 0
     },
     {
       "id": 4,
       "name": "基隆市環保局",
-      "shortName": "基隆市",
-      "englishName": "Keelung",
+      "homeName": "基隆市",
+      "shortName": "基隆",
       "available": 1
     },
     {
       "id": 5,
       "name": "台北市政府環保局",
-      "shortName": "臺北市",
-      "englishName": "TaipeiCity",
+      "homeName": "臺北市",
+      "shortName": "台北",
       "available": 3
     },
     {
       "id": 6,
       "name": "新北市政府環保局",
-      "shortName": "新北市",
-      "englishName": "TaipeiCounty",
+      "homeName": "新北市",
+      "shortName": "新北",
       "available": 6
     },
     {
       "id": 7,
       "name": "桃園縣政府環保局",
-      "shortName": "桃園縣",
-      "englishName": "Taoyuan",
+      "homeName": "桃園縣",
+      "shortName": "桃園",
       "available": 6
     },
     {
       "id": 8,
       "name": "新竹市環保局",
-      "shortName": "新竹市",
-      "englishName": "HsinchuCity",
+      "homeName": "新竹市",
+      "shortName": "竹市",
       "available": 3
     },
     {
       "id": 9,
       "name": "新竹縣政府環保局",
-      "shortName": "新竹縣",
-      "englishName": "HsinchuCounty",
+      "homeName": "新竹縣",
+      "shortName": "竹縣",
       "available": 2
     },
     {
       "id": 10,
       "name": "苗栗縣政府環保局",
-      "shortName": "苗栗縣",
-      "englishName": "Miaoli",
+      "homeName": "苗栗縣",
+      "shortName": "苗栗",
       "available": 2
     },
     {
       "id": 11,
       "name": "台中市政府環保局",
-      "shortName": "臺中市",
-      "englishName": "Taichung",
+      "homeName": "臺中市",
+      "shortName": "台中",
       "available": 3
     },
     {
       "id": 12,
       "name": "彰化縣環保局",
-      "shortName": "彰化縣",
-      "englishName": "Changhua",
+      "homeName": "彰化縣",
+      "shortName": "彰化",
       "available": 5
     },
     {
       "id": 13,
       "name": "南投縣政府環保局",
-      "shortName": "南投縣",
-      "englishName": "Nantou",
+      "homeName": "南投縣",
+      "shortName": "南投",
       "available": 0
     },
     {
       "id": 14,
       "name": "雲林縣環保局",
-      "shortName": "雲林縣",
-      "englishName": "Yunlin",
+      "homeName": "雲林縣",
+      "shortName": "雲林",
       "available": 2
     },
     {
       "id": 15,
       "name": "嘉義市環境保護局",
-      "shortName": "嘉義市",
-      "englishName": "ChiayiCity",
+      "homeName": "嘉義市",
+      "shortName": "嘉市",
       "available": 1
     },
     {
       "id": 16,
       "name": "嘉義縣環保局",
-      "shortName": "嘉義縣",
-      "englishName": "ChiayiCounty",
+      "homeName": "嘉義縣",
+      "shortName": "嘉縣",
       "available": 1
     },
     {
       "id": 17,
       "name": "台南市政府環保局",
-      "shortName": "臺南市",
-      "englishName": "Tainan",
+      "homeName": "臺南市",
+      "shortName": "台南",
       "available": 5
     },
     {
       "id": 18,
       "name": "高雄市政府環保局",
-      "shortName": "高雄市",
-      "englishName": "Kaohsiung",
+      "homeName": "高雄市",
+      "shortName": "高市",
       "available": 3
     },
     {
       "id": 19,
       "name": "高雄市政府海洋局",
-      "shortName": "高雄海洋",
-      "englishName": "KaohsiungSea",
+      "homeName": "高雄海洋",
+      "shortName": "高海",
       "available": 2
     },
     {
       "id": 20,
       "name": "屏東縣環保局",
-      "shortName": "屏東縣",
-      "englishName": "Pingtung",
+      "homeName": "屏東縣",
+      "shortName": "屏東",
       "available": 0
     },
     {
       "id": 21,
       "name": "宜蘭縣政府環保局",
-      "shortName": "宜蘭縣",
-      "englishName": "Yilan",
+      "homeName": "宜蘭縣",
+      "shortName": "宜蘭",
       "available": 3
     },
     {
       "id": 22,
       "name": "花蓮縣環保局",
-      "shortName": "花蓮縣",
-      "englishName": "Hualien",
+      "homeName": "花蓮縣",
+      "shortName": "花蓮",
       "available": 1
     },
     {
       "id": 23,
       "name": "台東縣環保局",
-      "shortName": "台東縣",
-      "englishName": "Taitung",
+      "homeName": "台東縣",
+      "shortName": "台東",
       "available": 1
     },
     {
       "id": 24,
       "name": "澎湖縣政府環保局",
-      "shortName": "澎湖縣",
-      "englishName": "Penghu",
+      "homeName": "澎湖縣",
+      "shortName": "澎湖",
       "available": 1
     },
     {
       "id": 25,
       "name": "連江縣政府環保局",
-      "shortName": "連江縣",
-      "englishName": "Lienchiang",
+      "homeName": "連江縣",
+      "shortName": "連江",
       "available": 0
     }
   ]

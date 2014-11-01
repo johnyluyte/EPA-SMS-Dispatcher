@@ -72,11 +72,7 @@ function doRound(round){
     }
     // TODO: 這邊改用 key hash 應該會漂亮、效能也更好
     for(var i=0;i<regionDatasLength;i++){
-      if(round == 1 && students[k].wish1 == regionDatas[i].englishName){
-        regionDatas[i].queue.push(students[k]);
-      }else if(round == 2 && students[k].wish2 == regionDatas[i].englishName){
-        regionDatas[i].queue.push(students[k]);
-      }else if(round == 3 && students[k].wish3 == regionDatas[i].englishName){
+      if(students[k].wish1 == regionDatas[i].name){
         regionDatas[i].queue.push(students[k]);
       }
     }
@@ -120,9 +116,9 @@ function cruelFunction(regionID, region){
     // 地方單位在依照成績排序後，再把 "過均標" 且 "符合戶籍地" 的往前排
     region.queue.sort(function(a, b){
       if((a.score >= avgScore && b.score >= avgScore) || (a.score < avgScore && b.score < avgScore)){
-        if(a.home == region.englishName && b.home != region.englishName){
+        if(a.home == region.homeName && b.home != region.homeName){
           return 1;
-        }else if(b.home == region.englishName && a.home != region.englishName){
+        }else if(b.home == region.homeName && a.home != region.homeName){
           return -1;
         }
       }
@@ -139,7 +135,7 @@ function popItemFromQueueAndPushToResultArray(region, numberOfItems){
   for(var k=0;k<numberOfItems;k++){
     region.resultArray.push(region.queue.pop());
   }
-  assignStudentToRegion(region.shortName, region.resultArray);   
+  assignStudentToRegion(region.homeName, region.resultArray);   
 }
 
 
@@ -156,37 +152,40 @@ function assignStudentToRegion(regionName, resultArray){
 function printRound(printToDivID){
   var tableScripts = '<div class="row"><div class="col-md-6">';
   tableScripts += '<table class="table table-striped table-hover">';
-  tableScripts += '<thead><tr><td>地區</td><td>名額</td><td>人數</td><td>學號</td></tr></thead><tbody>';
+  tableScripts += '<thead><tr><td>地區</td><td>名額</td><td>學號</td></tr></thead><tbody>';
   var regionDatasLength = regionDatas.length;
   for(var i=0;i<regionDatasLength;i++){
+    // 此地區此梯次沒有開名額，故可以不顯示此地區
+    if(regionDatas[i].available==0){
+      continue;
+    }
+
     // 地區名稱
     tableScripts += "<tr><td>" + regionDatas[i].shortName   + "</td>";
 
-    // 名額
-    if(regionDatas[i].available>0){
-      tableScripts += "<td>" + "<font color='black'>" + regionDatas[i].available + "</font></td>";
-    }else{
-      tableScripts += "<td>" + regionDatas[i].available + "</td>";
-    }
-
-    // 人數(紅色:溢出、藍色:短缺)
-    tableScripts += "<td>";
+    tableScripts += "<td>" + "<font color='black'>" + regionDatas[i].available + "</font>";
+    // 名額人數(紅色:溢出、藍色:短缺)
     if(regionDatas[i].queue.length > 0){
-      tableScripts += "<font color='red'>+" + regionDatas[i].queue.length + "</font></td><td>";
+      tableScripts += "<font color='red'> +" + regionDatas[i].queue.length + "</font>";
     }else if(regionDatas[i].resultArray.length < regionDatas[i].available){
-      tableScripts += "<font color='blue'>-" + parseInt(regionDatas[i].available - regionDatas[i].resultArray.length) + "</font></td><td>";
-    }else{
-      tableScripts += "</td><td>";
-    }
+      tableScripts += "<font color='blue'> -" + parseInt(regionDatas[i].available - regionDatas[i].resultArray.length) + "</font>";
+    } 
+    
 
+    tableScripts += "</td><td>";
+    // 用 count 來紀錄，每 n 個人就換下一行。用來平衡版面。
+    var count = 0;
     // 錄取的學號(錄取:粗體字、錄取且為戶籍地:綠色)
     for(var k=0;k<regionDatas[i].resultArray.length;k++){
-      if(regionDatas[i].resultArray[k].home == regionDatas[i].englishName){
+      if(regionDatas[i].resultArray[k].home == regionDatas[i].homeName){
         tableScripts += "<font color=green>";
       }else{
         tableScripts += "<font >";
       }
       tableScripts += "<b>" + regionDatas[i].resultArray[k].id + "</b>" + "(" + regionDatas[i].resultArray[k].score + ")" + "  </font>";
+      if((++count) % printRound_N == 0){
+        tableScripts += "<br/>";
+      }
     }
     // 未錄取的學號(淡藍色+刪節線)
     tableScripts += "<font color='#99c6c6'><s>"
@@ -198,7 +197,7 @@ function printRound(printToDivID){
     // 可以清空 queue，因為我們可以直接從 student.result 的內容來找出還沒被分發的學生，送進下一 round
     regionDatas[i].queue = new Array();
 
-    if(i==12){ // (total = 26, 26/2 = 13, 13-1 = 12, 故選 i==12)
+    if(i==11){ // (total = 26, 26/2 = 13, 13-1 = 12, 故選 i==12，但連江基本上不開缺，且本署通常開很多缺，故選 i==11)
       // 換行，也就是換另一張表格，一樣使用 col-md-6
       tableScripts += '</tbody></table></div><div class="col-md-6"><table class="table table-striped table-hover">';
       tableScripts += '<thead><tr><td>地區</td><td>名額</td><td>人數</td><td>學號</td></tr></thead><tbody>';

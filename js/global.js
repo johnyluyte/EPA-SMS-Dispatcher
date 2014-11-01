@@ -12,11 +12,14 @@ var TOTAL_STUDENT = 60;
 // 役男平均分數，所有役男分數加總後除以總役男數
 var avgScore = 0.0;
 
+// 在 also.js 的 printRound() 裡，會依照地區印出錄取的役男，當役男人多時，版面可能會不好看
+// 為了讓版面好看，我們希望印出 N 個役男後先換行，再把剩下的人數印完．
+var printRound_N = 6;
 
 function RegionData(){
-  var name;  // 地區之中文名稱。（花蓮縣政府環保局）
-  var shortName;  // 地區之中文名稱的簡稱。（花蓮縣）
-  var englishName;  // 地區之英文名稱、變數名稱。（Hualien）
+  var name;  // 地區之中文名稱。（花蓮縣環保局）
+  var homeName;  // 地區之戶籍地名稱。（Hualien）
+  var shortName;  // 地區之簡稱。（花蓮縣）
   var available;  // 地區之役男開放名額。（2）
   var queue;  // 選了這個地區的役男號碼，這些役男要依照分數、戶籍地等條件等待分發。（3、25、44、19）
   var resultArray; // 分發完後，最終分配到這個地區的役男號碼。（3、19）

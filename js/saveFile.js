@@ -13,9 +13,10 @@ function initBtnSaveTofile(){
     for(var i=1;i<=TOTAL_STUDENT;i++){
       content += i;
       content += "," + $('#score'+i).val();
-      for(var k=0;k<4;k++){
+      for(var k=0;k<=1;k++){
         content += "," + $('#wishList'+i+'_'+k).val();
       }
+      // TODO: 記得加上家因
       content += "\n";
     }
 
@@ -28,11 +29,12 @@ function initBtnSaveTofile(){
     var currentdate = new Date(); 
     var fileName = "" 
                     + currentdate.getFullYear() 
-                    + (currentdate.getMonth()+1)
-                    + currentdate.getDate()+"_"
-                    + currentdate.getHours()
-                    + currentdate.getMinutes()
-                    + currentdate.getSeconds()
+                    + fixOneDigit((currentdate.getMonth()+1))
+                    + fixOneDigit(currentdate.getDate())
+                    + "_"
+                    + fixOneDigit(currentdate.getHours())
+                    + fixOneDigit(currentdate.getMinutes())
+                    + fixOneDigit(currentdate.getSeconds())
                     + ".txt";
 
     $btn_download.attr({ href: blobUrl, download: fileName })
@@ -46,4 +48,16 @@ function initBtnSaveTofile(){
       };
     */
   });
+}
+
+// 如果現在時間是 2014/11/1, 21:07, 02
+// 可能我們會得到 2014111_2172
+// 而我們想要的是 20141101_210702 才對
+// 這個 function 可以 fix 上述問題。
+function fixOneDigit(x){
+  var result = x;
+  if(result<10){
+    result = "0" + result;
+  }
+  return result;
 }

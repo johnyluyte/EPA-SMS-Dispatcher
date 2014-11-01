@@ -28,7 +28,7 @@ function loadJSON(){
       var regionData = new RegionData();
       regionData.name = list[i].name;
       regionData.shortName = list[i].shortName;
-      regionData.englishName = list[i].englishName;
+      regionData.homeName = list[i].homeName;
       regionData.available = list[i].available;
       regionData.queue = new Array();
       regionData.resultArray = new Array();
@@ -99,6 +99,10 @@ function createWishListsNavTabs(){
 
 function createWishListsSetting(){
   var string = '';
+  string += 'explain name, homeName, shortName <br/>';
+  string += '<input type="checkbox" name="aa" value="" >"分發結果(依個人)" 的縣市名稱使用縮寫。</br>';
+  string += '可設定 printRound_N';
+  string += '沒收人的單位是否不顯示在 round 結果';
   return string;
 }
 
@@ -154,12 +158,13 @@ function addSelectTable(studentID, wishList){
       tmp += '<option disabled="">==外島==</option>';
     }
 
-    tmp += '<option value="' + regionDatas[i].englishName + '">';
     if(wishList==0){
       // 戶籍地的話就用簡寫名稱。（花蓮縣）
-      tmp += regionDatas[i].shortName + '</option>';
+      tmp += '<option value="' + regionDatas[i].homeName + '">';
+      tmp += regionDatas[i].homeName + '</option>';
     }else{
       // 分發地區的話就用單位全名。（花蓮縣政府環保局）
+      tmp += '<option value="' + regionDatas[i].name + '">';
       tmp += regionDatas[i].name + '</option>';
     }
   }
