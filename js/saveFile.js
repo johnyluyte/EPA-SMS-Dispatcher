@@ -16,7 +16,12 @@ function initBtnSaveTofile(){
       for(var k=0;k<=1;k++){
         content += "," + $('#wishList'+i+'_'+k).val();
       }
-      // TODO: 記得加上家因
+      // 加上家因
+      if($('#homeFirst'+i).is(':checked')){
+        content += "," + IS_HOME_FIRST;
+      }else{
+        content += "," + IS_NOT_HOME_FIRST;
+      }
       content += "\n";
     }
 

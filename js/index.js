@@ -119,7 +119,8 @@ function createWishListsTab(studentIdBegin){
     string += '<td>'+ addSelectTable(i,0) + '</td>'; 
     string += '<td>'+ '<input class="score" id="score'+ i + '" value="0" />' + '</td>';
     string += '<td>'+ addSelectTable(i,1) + '</td>';
-    string += '<td><input type="checkbox" name="homeFirst" value="homeFirst" >優先</td></tr>';
+    // 是否為家因的 check box，從 1 號 N 號依序為 homeFirst1 ~ homeFirstN
+    string += '<td><input type="checkbox" id="homeFirst' + i + '" value="">優先</td></tr>';
   }
   string += '</tbody></table>';
 

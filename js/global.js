@@ -5,6 +5,10 @@ var NO_REGION_RESULT = "none";
 var CSV_FILE_NAME = "loadCSV.php";
 // file name
 var JSON_FILE_NAME = "region.json";
+// 此役男是家因因素的話，在輸出的檔案顯示下列字串
+var IS_HOME_FIRST = "homeFirst";
+// 此役男不是家因因素的話，在輸出的檔案顯示下列字串
+var IS_NOT_HOME_FIRST = "none";
 
 
 // 替代役男總數

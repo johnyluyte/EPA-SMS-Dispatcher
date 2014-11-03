@@ -43,7 +43,10 @@ function initBtnLoadFromFile(){
     // 資料格式Ｂ：處理 [志願、家因]
     else if(length>3){
       $("#wishList"+ studentID + '_1').val( words[3] );
-      // TODO:記得處理家因
+      // 處理家因
+      if(words[4]==IS_HOME_FIRST){
+        $('#homeFirst'+studentID).prop('checked', true);
+      }
     }
 
     // 處理 [學號、分數、戶籍地]
