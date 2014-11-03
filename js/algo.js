@@ -48,12 +48,12 @@ function createResultPanel(printToDivID){
   str += '</div>';
   str += '<div class="panel-body" id="div_dispatchResult">';
   str += '<ul class="nav nav-tabs">';
-  str += '<li><a href="#resultRound1" data-toggle="tab">Round 1</a></li>';
-  str += '<li class="active"><a href="#resultPersonal" data-toggle="tab">分發結果(依個人)</a></li>';
+  str += '<li class="active"><a href="#resultRound1" data-toggle="tab">Round 1</a></li>';
+  str += '<li><a href="#resultPersonal" data-toggle="tab">分發結果(依個人)</a></li>';
   str += '</ul>';
   str += '<div id="resultTabContent" class="tab-content">';
-  str += '  <div class="tab-pane fade" id="resultRound1"></div>';
-  str += '  <div class="tab-pane fade active in" id="resultPersonal"></div>';
+  str += '  <div class="tab-pane fade active in" id="resultRound1"></div>';
+  str += '  <div class="tab-pane fade" id="resultPersonal"></div>';
   str += '</div>';
   str += '</div></div>';
   $("#"+printToDivID).html(str);
@@ -200,7 +200,7 @@ function printRound(printToDivID){
     if(i==11){ // (total = 26, 26/2 = 13, 13-1 = 12, 故選 i==12，但連江基本上不開缺，且本署通常開很多缺，故選 i==11)
       // 換行，也就是換另一張表格，一樣使用 col-md-6
       tableScripts += '</tbody></table></div><div class="col-md-6"><table class="table table-striped table-hover">';
-      tableScripts += '<thead><tr><td>地區</td><td>名額</td><td>人數</td><td>學號</td></tr></thead><tbody>';
+      tableScripts += '<thead><tr><td>地區</td><td>名額</td><td>學號</td></tr></thead><tbody>';
     }
   } // for(var i=0;i<regionDatasLength;i++)
 

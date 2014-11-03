@@ -164,7 +164,11 @@ function addSelectTable(studentID, wishList){
       tmp += regionDatas[i].homeName + '</option>';
     }else{
       // 分發地區的話就用單位全名。（花蓮縣政府環保局）
-      tmp += '<option value="' + regionDatas[i].name + '">';
+      tmp += '<option ';
+      if(regionDatas[i].available==0){
+        tmp += ' disabled';
+      }
+      tmp += ' value="' + regionDatas[i].name + '">';
       tmp += regionDatas[i].name + '</option>';
     }
   }
