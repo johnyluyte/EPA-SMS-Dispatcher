@@ -29,6 +29,7 @@ function initAlgo(){
     student.wish2 = $('#wishList'+i+'_2').val();
     student.wish3 = $('#wishList'+i+'_3').val();
     student.result = NO_REGION_RESULT;
+    student.homeFirst = $('#homeFirst'+i).is(':checked');
     // Add to lists
     students[i-1] = student;
     // parserInt() used to cause lost of digits. Fixed: 2014, Oct 29
@@ -62,6 +63,7 @@ function createResultPanel(printToDivID){
 
 // 將 分發規則 用演算法實作
 function doRound(round){
+  // TODO: 將家因、高於平均且戶籍地、高於平均非戶籍地、低於平均戶籍地、低於平均非戶籍地的標記出來
 
   // Step 1: 將學生加入其第N志願的 queue (N depend on round)
   var regionDatasLength = regionDatas.length;
@@ -89,7 +91,8 @@ function doRound(round){
     
     // 要去的人數 小於等於 開放的名額，每個人都錄取
     else if(region.queue.length <= region.available){
-      // var queueLength = region.queue.length;
+      // 其實可以不用排序，但是排序之後印出來比較好看
+      region.queue.sort(function(a, b){return a.score-b.score});    
       popItemFromQueueAndPushToResultArray(region, region.queue.length);
     }
 
@@ -114,6 +117,7 @@ function cruelFunction(regionID, region){
     popItemFromQueueAndPushToResultArray(region, region.available);
   }else{
     // 地方單位在依照成績排序後，再把 "過均標" 且 "符合戶籍地" 的往前排
+    // 剛剛已經過成績順序了，現在要分別對“過均標”跟“沒過均標”的做戶籍地優先的排序
     region.queue.sort(function(a, b){
       if((a.score >= avgScore && b.score >= avgScore) || (a.score < avgScore && b.score < avgScore)){
         if(a.home == region.homeName && b.home != region.homeName){
@@ -121,6 +125,13 @@ function cruelFunction(regionID, region){
         }else if(b.home == region.homeName && a.home != region.homeName){
           return -1;
         }
+      }
+      return 0;
+    });
+    // 接下來，把家因的抓出來，要優先分發，所以丟到 queue 最後面。（等等 pop()時會變成最前面 ）
+    region.queue.sort(function(a, b){
+      if(a.homeFirst==true){
+        return 1;
       }
       return 0;
     });
@@ -166,29 +177,41 @@ function printRound(printToDivID){
     tableScripts += "<td>" + "<font color='black'>" + regionDatas[i].available + "</font>";
     // 名額人數(紅色:溢出、藍色:短缺)
     if(regionDatas[i].queue.length > 0){
-      tableScripts += "<font color='red'> +" + regionDatas[i].queue.length + "</font>";
+      tableScripts += "<font color='" + fontColors.overheat + "'> +" + regionDatas[i].queue.length + "</font>";
     }else if(regionDatas[i].resultArray.length < regionDatas[i].available){
-      tableScripts += "<font color='blue'> -" + parseInt(regionDatas[i].available - regionDatas[i].resultArray.length) + "</font>";
+      tableScripts += "<font color='" + fontColors.shortage + "'> -" + parseInt(regionDatas[i].available - regionDatas[i].resultArray.length) + "</font>";
     } 
     
-
+    // 錄取的學號(顏色請參考 global.js 的 fontColors)
     tableScripts += "</td><td>";
-    // 用 count 來紀錄，每 n 個人就換下一行。用來平衡版面。
+    // 用 count 來紀錄，每 (global.js的)printRound_N 個人就換下一行。用來平衡版面。
     var count = 0;
-    // 錄取的學號(錄取:粗體字、錄取且為戶籍地:綠色)
     for(var k=0;k<regionDatas[i].resultArray.length;k++){
-      if(regionDatas[i].resultArray[k].home == regionDatas[i].homeName){
-        tableScripts += "<font color=green>";
-      }else{
-        tableScripts += "<font >";
+      var student = regionDatas[i].resultArray[k];
+      if(student.homeFirst == true && student.home == regionDatas[i].homeName){
+          tableScripts += "<font color=" + fontColors.typeHome + ">"; // 家因
       }
-      tableScripts += "<b>" + regionDatas[i].resultArray[k].id + "</b>" + "(" + regionDatas[i].resultArray[k].score + ")" + "  </font>";
+      else if(student.score >= avgScore){
+        if(student.home == regionDatas[i].homeName){
+          tableScripts += "<font color=" + fontColors.type1 + ">";
+        }else{
+          tableScripts += "<font color=" + fontColors.type2 + ">";          
+        }
+      }else{
+        if(student.home == regionDatas[i].homeName){
+          tableScripts += "<font color=" + fontColors.type3 + ">";
+        }else{
+          tableScripts += "<font color=" + fontColors.type4 + ">";          
+        }        
+      }
+
+      tableScripts += "<b>" + student.id + "</b>" + "(" + student.score + ")" + "  </font>";
       if((++count) % printRound_N == 0){
         tableScripts += "<br/>";
       }
     }
     // 未錄取的學號(淡藍色+刪節線)
-    tableScripts += "<font color='#99c6c6'><s>"
+    tableScripts += "<font color='" + fontColors.typeKicked + "'><s>"
     for(var k=0;k<regionDatas[i].queue.length;k++){
       tableScripts += regionDatas[i].queue[k].id + "(" + regionDatas[i].queue[k].score + ")" + "  ";
     }
@@ -208,7 +231,7 @@ function printRound(printToDivID){
   $("#"+printToDivID).append(tableScripts);
   tableScripts = null;
 
-  var str = "本回合結束後，尚未分配到服勤單位的學號: <font color='red'>";
+  var str = "本回合結束後，尚未分配到服勤單位的學號: <font color=' " + fontColors.leftOver + " '>";
   for(var k=0;k<TOTAL_STUDENT;k++){
     if(students[k].result == NO_REGION_RESULT){
       str += students[k].id + "  ";

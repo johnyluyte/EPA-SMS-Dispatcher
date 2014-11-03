@@ -20,6 +20,22 @@ var avgScore = 0.0;
 // 為了讓版面好看，我們希望印出 N 個役男後先換行，再把剩下的人數印完．
 var printRound_N = 6;
 
+
+// 使用不同顏色來代表 不同階段錄取 的役男
+fontColors = {
+  type1 : "#aa5500", // 第一階段錄取（分數大於均標，戶籍地）
+  type2 : "black", // 第二階段錄取（分數大於均標，非戶籍地）
+  type3 : "#0055aa", // 第三階段錄取（分數低於均標，戶籍地）
+  type4 : "#00aa55", // 第四階段錄取（分數低於均標，非戶籍地）
+  typeDefault : "black", // 預設顏色（錄取中央機關的顏色）
+  typeHome : "purple", // 家因顏色
+  typeKicked : "red", // 選某個地區時，被擠掉的人的顏色
+  leftOver : "red", // 本回合結束後，尚未分配到服勤單位的顏色
+  shortage : "blue", // 地區人數短缺時的顏色
+  overheat : "red" // 地區人數過多時的顏色
+};
+
+
 function RegionData(){
   var name;  // 地區之中文名稱。（花蓮縣環保局）
   var homeName;  // 地區之戶籍地名稱。（Hualien）
@@ -39,6 +55,7 @@ function Student(){
   var wish1; // 役男第一志願，預設為 none。（Hualien）
   // var wish2; // 役男第二志願，預設為 none。（none）
   // var wish3; // 役男第三志願，預設為 none。（none）
+  var homeFirst; // 役男是否為家因，優先分發到戶籍地，預設為 IS_NOT_HOME_FIRST。(IS_HOME_FIRST)
   var result; // 役男最後分發到的地區，預設為 none。（Hualien）
 }
 // 儲存 所有役男資料 的陣列，來源為 表格當中的 <option select>
