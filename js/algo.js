@@ -3,9 +3,7 @@ function initBtnStartAlgo(){
     event.preventDefault();
     initAlgo();
     createResultPanel("div_resultPanel");
-    doRound(1);
-    // doRound(2);
-    // doRound(3);
+    doRound();
     printResultPersonal("resultPersonal");
   });
 }
@@ -26,8 +24,6 @@ function initAlgo(){
     student.score = $('#score'+i).val();
     student.home = $('#wishList'+i+'_0').val();
     student.wish1 = $('#wishList'+i+'_1').val();
-    student.wish2 = $('#wishList'+i+'_2').val();
-    student.wish3 = $('#wishList'+i+'_3').val();
     student.result = NO_REGION_RESULT;
     student.homeFirst = $('#homeFirst'+i).is(':checked');
     // Add to lists
@@ -49,11 +45,20 @@ function createResultPanel(printToDivID){
   str += '</div>';
   str += '<div class="panel-body" id="div_dispatchResult">';
   str += '<ul class="nav nav-tabs">';
-  str += '<li class="active"><a href="#resultRound1" data-toggle="tab">Round 1</a></li>';
-  str += '<li><a href="#resultPersonal" data-toggle="tab">分發結果(依個人)</a></li>';
+  str += '<li class="active"><a href="#resultRegion" data-toggle="tab">地區</a></li>';
+  str += '<li><a href="#resultPersonal" data-toggle="tab">個人</a></li>';
+    // color block 色塊
+  str += '<li><canvas width="13" height="13" class="colorBlock" style="background:' + fontColors.typeHome + ';"></canvas> 家因</li>';
+  str += '<li><canvas width="13" height="13" class="colorBlock" style="background:' + fontColors.type1 + ';"></canvas> 高均+戶籍</li>';
+  str += '<li><canvas width="13" height="13" class="colorBlock" style="background:' + fontColors.type2 + ';"></canvas> 高均+非戶籍</li>';
+  str += '<li><canvas width="13" height="13" class="colorBlock" style="background:' + fontColors.type3 + ';"></canvas> 低均+戶籍地</li>';
+  str += '<li><canvas width="13" height="13" class="colorBlock" style="background:' + fontColors.type4 + ';"></canvas> 低均+非戶籍</li>';
+  str += '<li><canvas width="13" height="13" class="colorBlock" style="background:' + fontColors.typeKicked + ';"></canvas> 被擠掉</li>';
+  // 
+
   str += '</ul>';
   str += '<div id="resultTabContent" class="tab-content">';
-  str += '  <div class="tab-pane fade active in" id="resultRound1"></div>';
+  str += '  <div class="tab-pane fade active in" id="resultRegion"></div>';
   str += '  <div class="tab-pane fade" id="resultPersonal"></div>';
   str += '</div>';
   str += '</div></div>';
@@ -62,7 +67,7 @@ function createResultPanel(printToDivID){
 
 
 // 將 分發規則 用演算法實作
-function doRound(round){
+function doRound(){
   // TODO: 將家因、高於平均且戶籍地、高於平均非戶籍地、低於平均戶籍地、低於平均非戶籍地的標記出來
 
   // Step 1: 將學生加入其第N志願的 queue (N depend on round)
@@ -106,7 +111,7 @@ function doRound(round){
     }
   }
 
-  printRound("resultRound"+round);
+  printRound("resultRegion");
 }
 
 
@@ -161,7 +166,8 @@ function assignStudentToRegion(regionName, resultArray){
 
 // 印出每個 round 的資訊
 function printRound(printToDivID){
-  var tableScripts = '<div class="row"><div class="col-md-6">';
+  var tableScripts = "";
+  tableScripts += '<div class="row"><div class="col-md-6">';
   tableScripts += '<table class="table table-striped table-hover">';
   tableScripts += '<thead><tr><td>地區</td><td>名額</td><td>學號</td></tr></thead><tbody>';
   var regionDatasLength = regionDatas.length;
@@ -173,9 +179,9 @@ function printRound(printToDivID){
 
     // 地區名稱
     tableScripts += "<tr><td>" + regionDatas[i].shortName   + "</td>";
-
-    tableScripts += "<td>" + "<font color='black'>" + regionDatas[i].available + "</font>";
+    
     // 名額人數(紅色:溢出、藍色:短缺)
+    tableScripts += "<td>" + "<font color='black'>" + regionDatas[i].available + "</font>";
     if(regionDatas[i].queue.length > 0){
       tableScripts += "<font color='" + fontColors.overheat + "'> +" + regionDatas[i].queue.length + "</font>";
     }else if(regionDatas[i].resultArray.length < regionDatas[i].available){
@@ -204,7 +210,6 @@ function printRound(printToDivID){
           tableScripts += "<font color=" + fontColors.type4 + ">";          
         }        
       }
-
       tableScripts += "<b>" + student.id + "</b>" + "(" + student.score + ")" + "  </font>";
       if((++count) % printRound_N == 0){
         tableScripts += "<br/>";
@@ -258,7 +263,7 @@ function printResultPersonal(printToDivID){
     }
 
     if(i==studentsLength){
-      break;
+      break; // 印完惹
     }else if(i%10 == 0){
       tableScripts += '</tbody></table></div><div class="col-md-2"><table class="table table-striped table-hover">';
       tableScripts += '<thead><tr><td>學號</td><td>分發</td></tr></thead><tbody>';

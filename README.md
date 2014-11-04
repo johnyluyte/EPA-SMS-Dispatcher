@@ -33,15 +33,12 @@ To be updated.
 
 ## Todo Lists
 
-- 若單位沒有開缺，則也不能成為志願地的選擇
-- 存擋讀檔都要把家因的 checked 考慮進去，演算法也是
-- 文字顏色深一點
-- 不同順位選到的同學，用不同色塊表示。要有色塊解釋
+- 若學生數量只有 60 人，則 nav-tabs 的 61~70 也不應該出現
 - 版面大一點，這些可以加到新的 nav 分頁，用 toggle 的方式決定是否啟用
   - 分數可開關
   - 單位只用兩個字縮寫即可
 - 按一下尚未選到地區的號碼，顯示此號碼可以蓋過其他地方的哪些人
-- 到教室投影機測試版面、顏色
+- 到教室投影機測試版面、顏色、測試演算法有沒有問題
 - Offline version code refactory.
 - Online version should only accepct password request from accounts with @apa.gov.tw suffix
 - Online version.
