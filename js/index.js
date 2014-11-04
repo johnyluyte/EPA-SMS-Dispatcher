@@ -26,9 +26,10 @@ function loadJSON(){
     var list = data.regionLists;
     for(var i=0;i<list.length;i++){
       var regionData = new RegionData();
+      regionData.id = list[i].id;
       regionData.name = list[i].name;
-      regionData.shortName = list[i].shortName;
       regionData.homeName = list[i].homeName;
+      regionData.shortName = list[i].shortName;
       regionData.available = list[i].available;
       regionData.queue = new Array();
       regionData.resultArray = new Array();

@@ -4,6 +4,7 @@ function initBtnStartAlgo(){
     initAlgo();
     createResultPanel("div_resultPanel");
     doRound();
+    printRound("resultRegion");
     printResultPersonal("resultPersonal");
   });
 }
@@ -68,7 +69,10 @@ function createResultPanel(printToDivID){
 
 // 將 分發規則 用演算法實作
 function doRound(){
-  // TODO: 將家因、高於平均且戶籍地、高於平均非戶籍地、低於平均戶籍地、低於平均非戶籍地的標記出來
+  // 可以清空 queue，因為我們可以直接從 student.result 的內容來找出還沒被分發的學生，送進下一 round
+  for(var i=0;i<regionDatas.length;i++){
+    regionDatas[i].queue = new Array();
+  }
 
   // Step 1: 將學生加入其第N志願的 queue (N depend on round)
   var regionDatasLength = regionDatas.length;
@@ -110,8 +114,6 @@ function doRound(){
       cruelFunction(i, region);
     }
   }
-
-  printRound("resultRegion");
 }
 
 
@@ -222,8 +224,6 @@ function printRound(printToDivID){
     }
     tableScripts += "</s></font></td></tr>"    
 
-    // 可以清空 queue，因為我們可以直接從 student.result 的內容來找出還沒被分發的學生，送進下一 round
-    regionDatas[i].queue = new Array();
 
     if(i==11){ // (total = 26, 26/2 = 13, 13-1 = 12, 故選 i==12，但連江基本上不開缺，且本署通常開很多缺，故選 i==11)
       // 換行，也就是換另一張表格，一樣使用 col-md-6
@@ -236,14 +236,104 @@ function printRound(printToDivID){
   $("#"+printToDivID).append(tableScripts);
   tableScripts = null;
 
-  var str = "本回合結束後，尚未分配到服勤單位的學號: <font color=' " + fontColors.leftOver + " '>";
+  var leftOverQueue = new Array();
   for(var k=0;k<TOTAL_STUDENT;k++){
     if(students[k].result == NO_REGION_RESULT){
-      str += students[k].id + "  ";
+      leftOverQueue.push(students[k].id);
     }
   }
+
+  var str = "本回合結束後，尚未分配到服勤單位的學號: <font color=' " + fontColors.leftOver + " '>";
+  var queueLength = leftOverQueue.length;
+  for(var k=0;k<queueLength;k++){
+    str += "<span class='leftOverStudents' id='leftOverId" + leftOverQueue[k] + "'>" + leftOverQueue[k] + "</span>";
+    str += "  ";
+  }
   str += "</font>";
+  str += "<div id='divFindResolution'></div>";
   $("#"+printToDivID).append(str);
+
+  initLeftOverOnClick(queueLength,leftOverQueue);
+}
+
+
+function initLeftOverOnClick(queueLength,leftOverQueue){
+  for(var i=0;i<queueLength;i++){
+    var id = leftOverQueue[i]; 
+    $("#leftOverId" + id).click(function(){
+      findResolution("divFindResolution", $(this).html().toString());
+      // $("#autoFindResolution").append("<p>This is " + $(this).html() + "</p>");
+    });
+  }
+}
+
+// 按下號碼後，算出此號碼還可以搶的贏的地區，顯示出來
+function findResolution(printToDivID, id){
+  var str = '<div class="alert alert-dismissable alert-success"><button type="button" class="close" data-dismiss="alert">×</button>';
+  str += '[' + id + '號可選擇] ';
+
+  // 將此 id 的學生抓出來，複製一份
+  var student = new Student();
+  student.id = students[id-1].id;
+  student.score = students[id-1].score;
+  student.homeFirst = students[id-1].homeFirst;
+
+  var regionDatasLength = regionDatas.length;
+  for(var i=0;i<regionDatasLength;i++){
+    var region = regionDatas[i];
+    // 該地區沒開放名額，跳過
+    if(region.available==0){
+      continue;
+    }
+    // 地區名額小於目前錄取人數，可直接視為可搶贏
+    else if(region.resultArray.length < region.available){
+      str += region.shortName + " ";
+      continue;
+    }
+
+    // 地區名額大於目前錄取人數，需要排序看看誰可以錄取
+    // 將此 student 丟進該地區的 queue，並排序
+    // 若排序完成後此 student 不在這個 queue 的 "最後"，表示此 student 可以錄取此地區，列出此地區
+    // The slice() operation clones the array and returns the reference to the new array
+    var tempQueue = region.resultArray.slice();
+    tempQueue.push(student);
+    tempQueue.sort(function(a, b){return a.score-b.score}); 
+
+    if(region.id<=3){
+      // 中央只有比成績，不考慮戶籍地
+      if(tempQueue[0].id != id){
+        str += region.shortName + " ";
+      }
+    }
+    else{
+      // 地方單位在依照成績排序後，再把 "過均標" 且 "符合戶籍地" 的往前排
+      // 剛剛已經過成績順序了，現在要分別對“過均標”跟“沒過均標”的做戶籍地優先的排序
+      tempQueue.sort(function(a, b){
+        if((a.score >= avgScore && b.score >= avgScore) || (a.score < avgScore && b.score < avgScore)){
+          if(a.home == region.homeName && b.home != region.homeName){
+            return 1;
+          }else if(b.home == region.homeName && a.home != region.homeName){
+           return -1;
+          }
+       }
+        return 0;
+      });
+      // 接下來，把家因的抓出來，要優先分發，所以丟到 queue 最後面。（等等 pop()時會變成最前面 ）
+      tempQueue.sort(function(a, b){
+       if(a.homeFirst==true){
+         return 1;
+       }
+        return 0;
+      });
+
+      if(tempQueue[0].id != id){
+        str += region.shortName + " ";
+      } 
+    }
+  } // for(var i=0;i<regionDatasLength;i++)
+
+  str += '</div>';
+  $("#"+printToDivID).html(str);
 }
 
 

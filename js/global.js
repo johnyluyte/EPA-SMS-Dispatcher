@@ -37,6 +37,7 @@ fontColors = {
 
 
 function RegionData(){
+  var id;
   var name;  // 地區之中文名稱。（花蓮縣環保局）
   var homeName;  // 地區之戶籍地名稱。（Hualien）
   var shortName;  // 地區之簡稱。（花蓮縣）

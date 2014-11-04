@@ -33,11 +33,10 @@ To be updated.
 
 ## Todo Lists
 
-- 若學生數量只有 60 人，則 nav-tabs 的 61~70 也不應該出現
+- algo.js 要 refactory
+- 高海算是高雄市戶籍嗎！？
 - 版面大一點，這些可以加到新的 nav 分頁，用 toggle 的方式決定是否啟用
-  - 分數可開關
-  - 單位只用兩個字縮寫即可
-- 按一下尚未選到地區的號碼，顯示此號碼可以蓋過其他地方的哪些人
+  - 有需要嗎？
 - 到教室投影機測試版面、顏色、測試演算法有沒有問題
 - Offline version code refactory.
 - Online version should only accepct password request from accounts with @apa.gov.tw suffix
