@@ -55,45 +55,26 @@ function afterLoadJSON(){
 
 // 印出 0-10號 10-20號 20-30號 那個 nav-tabs。
 function createWishListsNavTabs(){
-  // TODO: 這裏改成 for 迴圈，並能依照 TOTAL_STUDENT 來判斷要加多少 tab。
-  var string = "";
-  string += '<ul class="nav nav-tabs">';
+  // 依照學生人數調整 nav-tabs 的 tab 數量
+  var string = '<ul class="nav nav-tabs">';
   string += '<li class="active"><a href="#wishList10" data-toggle="tab">1-10 號</a></li>';
-  string += '<li class=""><a href="#wishList20" data-toggle="tab">11-20 號</a></li>';
-  string += '<li class=""><a href="#wishList30" data-toggle="tab">21-30 號</a></li>';
-  string += '<li class=""><a href="#wishList40" data-toggle="tab">31-40 號</a></li>';
-  string += '<li class=""><a href="#wishList50" data-toggle="tab">41-50 號</a></li>';
-  string += '<li class=""><a href="#wishList60" data-toggle="tab">51-60 號</a></li>';
-  string += '<li class=""><a href="#wishList70" data-toggle="tab">61-70 號</a></li>';
-  string += '<li class=""><a href="#wishListSetting" data-toggle="tab">設定</a></li>';
-  string += '</ul>';
+  for(var i=20;i<(TOTAL_STUDENT+10);i+=10){
+    string += '<li><a href="#wishList' + i + '" data-toggle="tab">'+(i-9)+'-'+i+' 號</a></li>';
+  }
+  string += '<li class=""><a href="#wishListSetting" data-toggle="tab">設定</a></li></ul>';
   string += '<div id="myTabContent" class="tab-content">';
+
+  // 依照學生人數調整 tab-pane 的數量  
   string += '<div class="tab-pane fade active in" id="wishList10">';
-  string += createWishListsTab(10);
-  string += '</div>';
-  string += '<div class="tab-pane fade in" id="wishList20">';
-  string += createWishListsTab(20);
-  string += '</div>';
-  string += '<div class="tab-pane fade in" id="wishList30">';
-  string += createWishListsTab(30);
-  string += '</div>';
-  string += '<div class="tab-pane fade in" id="wishList40">';
-  string += createWishListsTab(40);
-  string += '</div>';
-  string += '<div class="tab-pane fade in" id="wishList50">';
-  string += createWishListsTab(50);
-  string += '</div>';
-  string += '<div class="tab-pane fade in" id="wishList60">';
-  string += createWishListsTab(60);
-  string += '</div>';
-  string += '<div class="tab-pane fade in" id="wishList70">';
-  string += createWishListsTab(70);
-  string += '</div>';
+  string += createWishListsTab(10) + '</div>';
+  for(var i=20;i<(TOTAL_STUDENT+10);i+=10){
+    string += '<div class="tab-pane fade in" id="wishList' + i + '">';
+    string += createWishListsTab(i) + '</div>';
+  }
+
   string += '<div class="tab-pane fade in" id="wishListSetting">';
   string += createWishListsSetting();
-  string += '</div>';
-  string += '</div>';
-  
+  string += '</div></div>';
   $("#div_wishLists").append(string); 
 }
 
