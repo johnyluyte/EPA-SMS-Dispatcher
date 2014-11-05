@@ -212,17 +212,19 @@ function printRound(printToDivID){
           tableScripts += "<font color=" + fontColors.type4 + ">";          
         }        
       }
-      tableScripts += "<b>" + student.id + "</b>" + "(" + student.score + ")" + "  </font>";
+      tableScripts += "<b>" + student.id + "</b>";
+      tableScripts += "<span class='scoreFont'>(" + student.score + ")  </span></font>";
       if((++count) % printRound_N == 0){
         tableScripts += "<br/>";
       }
     }
     // 未錄取的學號(淡藍色+刪節線)
-    tableScripts += "<font color='" + fontColors.typeKicked + "'><s>"
+    tableScripts += "<font color='" + fontColors.typeKicked + "'>"
     for(var k=0;k<regionDatas[i].queue.length;k++){
-      tableScripts += regionDatas[i].queue[k].id + "(" + regionDatas[i].queue[k].score + ")" + "  ";
+      tableScripts += "<s>" + regionDatas[i].queue[k].id + "</s>";
+      tableScripts += "<span class='scoreFont'>(" + regionDatas[i].queue[k].score + ")  </span>";
     }
-    tableScripts += "</s></font></td></tr>"    
+    tableScripts += "</font></td></tr>"    
 
 
     if(i==11){ // (total = 26, 26/2 = 13, 13-1 = 12, 故選 i==12，但連江基本上不開缺，且本署通常開很多缺，故選 i==11)
