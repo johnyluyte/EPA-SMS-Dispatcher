@@ -33,16 +33,14 @@ To be updated.
 
 ## Todo Lists
 
-- algo.js 要 refactory
 - 高海算是高雄市戶籍嗎！？
-- 版面大一點，這些可以加到新的 nav 分頁，用 toggle 的方式決定是否啟用
-  - 有需要嗎？
 - 到教室投影機測試版面、顏色、測試演算法有沒有問題
-- Offline version code refactory.
-- Online version should only accepct password request from accounts with @apa.gov.tw suffix
-- Online version.
-- Chrome modification.
+
 - Tutorial pages with screenshots
+- Chrome modification.
+
+- Online version.
+- Online version should only accepct password request from accounts with @apa.gov.tw suffix
 
 
 ## License

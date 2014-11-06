@@ -62,7 +62,7 @@ function createWishListsNavTabs(){
   for(var i=20;i<(TOTAL_STUDENT+10);i+=10){
     string += '<li><a href="#wishList' + i + '" data-toggle="tab">'+(i-9)+'-'+i+' 號</a></li>';
   }
-  string += '<li class=""><a href="#wishListSetting" data-toggle="tab">設定</a></li></ul>';
+  string += '</ul>';
   string += '<div id="myTabContent" class="tab-content">';
 
   // 依照學生人數調整 tab-pane 的數量  
@@ -73,20 +73,10 @@ function createWishListsNavTabs(){
     string += createWishListsTab(i) + '</div>';
   }
 
-  string += '<div class="tab-pane fade in" id="wishListSetting">';
-  string += createWishListsSetting();
-  string += '</div></div>';
+  string += '</div>';
   $("#div_wishLists").append(string); 
 }
 
-function createWishListsSetting(){
-  var string = '';
-  string += 'explain name, homeName, shortName <br/>';
-  string += '<input type="checkbox" name="aa" value="" >"分發結果(依個人)" 的縣市名稱使用縮寫。</br>';
-  string += '可設定 printRound_N';
-  string += '沒收人的單位是否不顯示在 round 結果';
-  return string;
-}
 
 // 印出 學號 戶籍地 分數 志願一二三 的那整張表格。
 function createWishListsTab(studentIdBegin){
