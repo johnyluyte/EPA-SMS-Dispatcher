@@ -1,10 +1,9 @@
-// Const
 // 役男分發結果，沒被分配到任何地區
 var NO_REGION_RESULT = "none";
 // file name
-var CSV_FILE_NAME = "loadCSV.php";
-// file name
 var JSON_FILE_NAME = "region.json";
+
+
 // 此役男是家因因素的話，在輸出的檔案顯示下列字串
 var IS_HOME_FIRST = "homeFirst";
 // 此役男不是家因因素的話，在輸出的檔案顯示下列字串
@@ -12,7 +11,7 @@ var IS_NOT_HOME_FIRST = "none";
 
 
 // 替代役男總數
-var TOTAL_STUDENT = 60; 
+var TOTAL_STUDENT = 50; 
 // 役男平均分數，所有役男分數加總後除以總役男數
 var avgScore = 0.0;
 
