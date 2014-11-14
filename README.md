@@ -18,6 +18,7 @@ It can work on any browsers and any computers.
 
 However, the **offline version** cannot save data.
 It means that the user has to download current data to his or her computer, and load it from the browser next time. The data is convert and saved in a txt file.
+**Please [make sure the input file is encoded with UTF-8 (without BOM)](http://wen198599.pixnet.net/blog/post/22314819-%5B%E5%BC%95%E7%94%A8%5Dexcel%E9%96%8B%E5%95%9Fcsv%E6%AA%94%E7%9A%84%E8%8A%B1%E5%BC%8F%E6%8A%80%E5%B7%A7)**
 
 This should not be a big problem to most users.
 But some employees may not be so familiar with **offline webpages**.
