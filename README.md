@@ -34,8 +34,12 @@ To be updated.
 
 ## Todo Lists
 
+- 優先分發的縣市如果沒開缺，可以選鄰近縣市（顏色、排序順位判斷條件要改）
+- 要印給輔導組，照號碼排
 - 高海算是高雄市戶籍嗎！？
-- 到教室投影機測試版面、顏色、測試演算法有沒有問題
+
+- 123456789123
+- 裝 firefox, notepad++, D碟不會自動回復
 
 - Tutorial pages with screenshots
 - Chrome modification.

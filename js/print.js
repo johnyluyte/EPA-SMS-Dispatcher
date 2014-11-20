@@ -13,15 +13,15 @@ function printRound(printToDivID){
 
     // 地區名稱
     tableScripts += "<tr><td>" + regionDatas[i].shortName   + "</td>";
-    
+
     // 名額人數(紅色:溢出、藍色:短缺)
     tableScripts += "<td>" + "<font color='black'>" + regionDatas[i].available + "</font>";
     if(regionDatas[i].queue.length > 0){
       tableScripts += "<font color='" + fontColors.overheat + "'> +" + regionDatas[i].queue.length + "</font>";
     }else if(regionDatas[i].resultArray.length < regionDatas[i].available){
       tableScripts += "<font color='" + fontColors.shortage + "'> -" + parseInt(regionDatas[i].available - regionDatas[i].resultArray.length) + "</font>";
-    } 
-    
+    }
+
     // 錄取的學號(顏色請參考 global.js 的 fontColors)
     tableScripts += "</td><td>";
     // 用 count 來紀錄，每 (global.js的)printRound_N 個人就換下一行。用來平衡版面。
@@ -35,14 +35,14 @@ function printRound(printToDivID){
         if(student.home == regionDatas[i].homeName){
           tableScripts += "<font color=" + fontColors.type1 + ">";
         }else{
-          tableScripts += "<font color=" + fontColors.type2 + ">";          
+          tableScripts += "<font color=" + fontColors.type2 + ">";
         }
       }else{
         if(student.home == regionDatas[i].homeName){
           tableScripts += "<font color=" + fontColors.type3 + ">";
         }else{
-          tableScripts += "<font color=" + fontColors.type4 + ">";          
-        }        
+          tableScripts += "<font color=" + fontColors.type4 + ">";
+        }
       }
       tableScripts += "<b>" + student.id + "</b>";
       tableScripts += "<span class='scoreFont'>(" + student.score + ")  </span></font>";
@@ -56,7 +56,7 @@ function printRound(printToDivID){
       tableScripts += "<s>" + regionDatas[i].queue[k].id + "</s>";
       tableScripts += "<span class='scoreFont'>(" + regionDatas[i].queue[k].score + ")  </span>";
     }
-    tableScripts += "</font></td></tr>"    
+    tableScripts += "</font></td></tr>"
 
 
     if(i==11){ // (total = 26, 26/2 = 13, 13-1 = 12, 故選 i==12，但連江基本上不開缺，且本署通常開很多缺，故選 i==11)
@@ -93,7 +93,7 @@ function printRound(printToDivID){
 
 function initLeftOverOnClick(queueLength,leftOverQueue){
   for(var i=0;i<queueLength;i++){
-    var id = leftOverQueue[i]; 
+    var id = leftOverQueue[i];
     $("#leftOverId" + id).click(function(){
       findResolution("divFindResolution", $(this).html().toString());
     });
@@ -103,8 +103,8 @@ function initLeftOverOnClick(queueLength,leftOverQueue){
 
 // 按下號碼後，算出此號碼還可以搶的贏的地區，顯示出來
 function findResolution(printToDivID, id){
-  var str = '<div class="alert alert-dismissable alert-success"><button type="button" class="close" data-dismiss="alert">×</button>';
-  str += '[' + id + '號可選擇] ';
+  var str = '<div class="div_findResolution">';
+  str += '<span style="color:purple">（' + id + '號）</span>可選擇：';
 
   // 將此 id 的學生抓出來，複製一份
   var student = new Student();
@@ -131,7 +131,7 @@ function findResolution(printToDivID, id){
     // The slice() operation clones the array and returns the reference to the new array
     var tempQueue = region.resultArray.slice();
     tempQueue.push(student);
-    tempQueue.sort(function(a, b){return a.score-b.score}); 
+    tempQueue.sort(function(a, b){return a.score-b.score});
 
     if(region.id<=3){
       // 中央只有比成績，不考慮戶籍地
@@ -162,7 +162,7 @@ function findResolution(printToDivID, id){
 
       if(tempQueue[0].id != id){
         str += region.shortName + " ";
-      } 
+      }
     }
   } // for(var i=0;i<regionDatasLength;i++)
 

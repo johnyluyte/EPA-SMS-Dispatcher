@@ -11,13 +11,13 @@ var IS_NOT_HOME_FIRST = "none";
 
 
 // 替代役男總數
-var TOTAL_STUDENT = 50; 
+var TOTAL_STUDENT = 50;
 // 役男平均分數，所有役男分數加總後除以總役男數
 var avgScore = 0.0;
 
 // 在 also.js 的 printRound() 裡，會依照地區印出錄取的役男，當役男人多時，版面可能會不好看
 // 為了讓版面好看，我們希望印出 N 個役男後先換行，再把剩下的人數印完．
-var printRound_N = 6;
+var printRound_N = 3;
 
 
 // 使用不同顏色來代表 不同階段錄取 的役男
@@ -45,7 +45,7 @@ function RegionData(){
   var resultArray; // 分發完後，最終分配到這個地區的役男號碼。（3、19）
 }
 // 儲存 所有可供分發單位資料 的陣列，來源為 JSON。
-var regionDatas = new Array(); // Array 內的資料結構為 RegionData 
+var regionDatas = new Array(); // Array 內的資料結構為 RegionData
 
 
 function Student(){
@@ -59,4 +59,4 @@ function Student(){
   var result; // 役男最後分發到的地區，預設為 none。（Hualien）
 }
 // 儲存 所有役男資料 的陣列，來源為 表格當中的 <option select>
-var students = new Array(); // Array 內的資料結構為 Student 
+var students = new Array(); // Array 內的資料結構為 Student
