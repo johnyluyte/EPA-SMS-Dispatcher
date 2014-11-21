@@ -28,7 +28,7 @@ function printRound(printToDivID){
     var count = 0;
     for(var k=0;k<regionDatas[i].resultArray.length;k++){
       var student = regionDatas[i].resultArray[k];
-      if(student.homeFirst == true && student.home == regionDatas[i].homeName){
+      if(student.homeFirst == true){
           tableScripts += "<font color=" + fontColors.typeHome + ">"; // 家因
       }
       else if(student.score >= avgScore){
