@@ -3,7 +3,7 @@
 function initBtnSaveTofile(){
   var $btn_download = $('#btn_download');
   $btn_download.hide();
-  
+
   $('#btn_saveToFile').bind('click', function(event) {
     // 取消預設的按鈕動作。
     event.preventDefault();
@@ -29,11 +29,11 @@ function initBtnSaveTofile(){
     const MIME_TYPE = 'text/plain';
     var blob  = new Blob([content], {type: MIME_TYPE});
     var blobUrl  = window.URL.createObjectURL(blob);
-    
+
     // 指定 目前的日期時間 為 檔案名稱。
-    var currentdate = new Date(); 
-    var fileName = "" 
-                    + currentdate.getFullYear() 
+    var currentdate = new Date();
+    var fileName = ""
+                    + currentdate.getFullYear()
                     + fixOneDigit((currentdate.getMonth()+1))
                     + fixOneDigit(currentdate.getDate())
                     + "_"

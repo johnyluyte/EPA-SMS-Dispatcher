@@ -38,8 +38,8 @@ fontColors = {
 function RegionData(){
   var id;
   var name;  // 地區之中文名稱。（花蓮縣環保局）
-  var homeName;  // 地區之戶籍地名稱。（Hualien）
-  var shortName;  // 地區之簡稱。（花蓮縣）
+  var homeName;  // 地區之戶籍地名稱。（花蓮縣）
+  var shortName;  // 地區之簡稱。（花蓮）
   var available;  // 地區之役男開放名額。（2）
   var queue;  // 選了這個地區的役男號碼，這些役男要依照分數、戶籍地等條件等待分發。（3、25、44、19）
   var resultArray; // 分發完後，最終分配到這個地區的役男號碼。（3、19）

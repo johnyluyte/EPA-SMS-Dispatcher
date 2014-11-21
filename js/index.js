@@ -1,11 +1,11 @@
 // 確認是否關閉瀏覽器，防止誤觸關閉瀏覽器。
-var confirmOnPageExit = function (e) 
+var confirmOnPageExit = function (e)
 {
   // If we haven't been passed the event get the window.event
   e = e || window.event;
   var message = 'Any text will block the navigation and display a prompt';
   // For IE6-8 and Firefox prior to version 4
-  if (e) 
+  if (e)
   {
     e.returnValue = message;
   }
@@ -39,7 +39,7 @@ function loadJSON(){
     afterLoadJSON();
   })
   .error(function() {
-    alert("Error loading JSON_FILE_NAME:" + JSON_FILE_NAME ); 
+    alert("Error loading JSON_FILE_NAME:" + JSON_FILE_NAME );
   });
 }
 
@@ -65,7 +65,7 @@ function createWishListsNavTabs(){
   string += '</ul>';
   string += '<div id="myTabContent" class="tab-content">';
 
-  // 依照學生人數調整 tab-pane 的數量  
+  // 依照學生人數調整 tab-pane 的數量
   string += '<div class="tab-pane fade active in" id="wishList10">';
   string += createWishListsTab(10) + '</div>';
   for(var i=20;i<(TOTAL_STUDENT+10);i+=10){
@@ -74,7 +74,7 @@ function createWishListsNavTabs(){
   }
 
   string += '</div>';
-  $("#div_wishLists").append(string); 
+  $("#div_wishLists").append(string);
 }
 
 
@@ -88,7 +88,7 @@ function createWishListsTab(studentIdBegin){
       break;
     }
     string += '<tr><td>'+ i + '</td>';
-    string += '<td>'+ addSelectTable(i,0) + '</td>'; 
+    string += '<td>'+ addSelectTable(i,0) + '</td>';
     string += '<td>'+ '<input class="score" id="score'+ i + '" value="0" />' + '</td>';
     string += '<td>'+ addSelectTable(i,1) + '</td>';
     // 是否為家因的 check box，從 1 號 N 號依序為 homeFirst1 ~ homeFirstN
@@ -117,10 +117,10 @@ function addSelectTable(studentID, wishList){
     if(wishList==0 && i<4){
       continue;
     }else if(i==0){
-      tmp += '<option disabled="">==中央單位==</option>';  
+      tmp += '<option disabled="">==中央單位==</option>';
     }
     if(i==4){
-      tmp += '<option disabled="">==北部==</option>';    
+      tmp += '<option disabled="">==北部==</option>';
     }else if(i==10){
       tmp += '<option disabled="">==中部==</option>';
     }else if(i==14){

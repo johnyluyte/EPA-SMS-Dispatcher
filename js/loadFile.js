@@ -6,22 +6,22 @@ http://www.wilmott.com/messageview.cfm?catid=10&threadid=94008
 // 讀取學生志願檔案(txt file)。
 function initBtnLoadFromFile(){
   document.getElementById('studentChangeFileInput').addEventListener('change', loadFromFile, false);
-  
+
   function loadFromFile(evt) {
-    var file = evt.target.files[0];   
+    var file = evt.target.files[0];
     if (file) {
       var fileReader = new FileReader();
-      fileReader.onload = function(e) {           
+      fileReader.onload = function(e) {
         var content = fileReader.result;
         var lines = content.split('\n');
         var linesLength = lines.length;
-        for(var i=0;i<linesLength;i++){       
+        for(var i=0;i<linesLength;i++){
           var words = lines[i].split(',');
           fillSelectOptions(i+1,words); // i+1 Because StudentId starts from 1, not 0
         }
       }
       fileReader.readAsText(file);
-    } else { 
+    } else {
       alert("Failed to load file");
     }
   }
