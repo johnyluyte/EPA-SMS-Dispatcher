@@ -47,9 +47,8 @@ function loadJSON(){
 // 這些函式會用到 regionDatas[]，而 regionDatas[] 的資料來源為 JSON，故必須在 JSON 讀取完後才能執行。
 function afterLoadJSON(){
   createWishListsNavTabs(); // 佈置版面
-  initBtnSaveTofile(); // 下載按鈕
-  initBtnLoadFromFile(); // 讀取按鈕
-  initBtnStartAlgo(); // 預排按鈕
+  initBtnLoadFromFile(); // 初始化讀取按鈕
+  initBtnStartAlgo(); // 初始化預排按鈕
   window.onbeforeunload = confirmOnPageExit; // 確認是否關閉瀏覽器，防止誤觸關閉瀏覽器。
 }
 

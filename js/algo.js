@@ -6,6 +6,7 @@ function initBtnStartAlgo(){
     doRound();
     printRound("resultRegion");
     printResultPersonal("resultPersonal");
+    createDownloadableContent();
   });
 }
 
@@ -55,14 +56,19 @@ function createResultPanel(printToDivID){
   str += '<li><canvas width="13" height="13" class="colorBlock" style="background:' + fontColors.type3 + ';"></canvas> 低均+戶籍地</li>';
   str += '<li><canvas width="13" height="13" class="colorBlock" style="background:' + fontColors.type4 + ';"></canvas> 低均+非戶籍</li>';
   str += '<li><canvas width="13" height="13" class="colorBlock" style="background:' + fontColors.typeKicked + ';"></canvas> 被擠掉</li>';
-  // 
-
   str += '</ul>';
   str += '<div id="resultTabContent" class="tab-content">';
   str += '  <div class="tab-pane fade active in" id="resultRegion"></div>';
   str += '  <div class="tab-pane fade" id="resultPersonal"></div>';
   str += '</div>';
-  str += '</div></div>';
+  str += '</div>';
+  str += '<div class="panel-fotter">';
+  str += '  <div class="btn-group btn-group-justified">';
+  str += '    <a href="" class="btn btn-primary" id="btn_downloadTXT">下載程式可讀取的格式(.txt)</a>';
+  str += '    <a href="" class="btn btn-success" id="btn_downloadCSV">輸出表格給輔導組(.csv)</a>';
+  str += '  </div>';
+  str += '</div>';
+  str += '</div>';
   $("#"+printToDivID).html(str);
 }
 
@@ -97,18 +103,18 @@ function doRound(){
     if(region.resultArray.length == region.available){
       continue;
     }
-    
+
     // 要去的人數 小於等於 開放的名額，每個人都錄取
     else if(region.queue.length <= region.available){
       // 其實可以不用排序，但是排序之後印出來比較好看
-      region.queue.sort(function(a, b){return a.score-b.score});    
+      region.queue.sort(function(a, b){return a.score-b.score});
       popItemFromQueueAndPushToResultArray(region, region.queue.length);
     }
 
     // 要去的人數 大於 開放的名額，依照 分發規則 找出最適合此單位的學生放入此單位的 resultArray
     else{
       // 不管是中央還是地方，都要比較成績，所以先依照成績排序
-      region.queue.sort(function(a, b){return a.score-b.score});    
+      region.queue.sort(function(a, b){return a.score-b.score});
       // 依照成績排序後是"由小到大"，亦即 [30分, 40分, 60分, 90分, 100分]
       // 考慮到之後的 Array.pop() 是 pop 出"最後一個"物件，這樣排列比較方便之後的處理
       cruelFunction(i, region);
@@ -153,7 +159,7 @@ function popItemFromQueueAndPushToResultArray(region, numberOfItems){
   for(var k=0;k<numberOfItems;k++){
     region.resultArray.push(region.queue.pop());
   }
-  assignStudentToRegion(region.homeName, region.resultArray);   
+  assignStudentToRegion(region.homeName, region.resultArray);
 }
 
 

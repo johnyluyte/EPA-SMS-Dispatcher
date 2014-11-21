@@ -34,6 +34,10 @@ To be updated.
 
 ## Todo Lists
 
+- 增加 “全部清除” 按鈕 (F5)
+- 原本的下載功能是利用 blob 將純文字轉成可下載的物件，此過程暫時稱為 convert，我們原本為 convert 設立一個獨立的按鈕，按下該按鈕後，才會在跑出另一個 download 按鈕，download 按鈕才會真正將轉換後的 blob 下載到使用者端。
+- 為了讓操作更簡化，我們將 convert 的功能以及 download 按鈕的產生 併入開始預排按鈕內，也就是說，現在只要按下開始預排按鈕，就會自動執行 convert，並產生 download 按鈕，如此一來，algo result -> convert -> downloadable 的流程一定不會有錯，對使用者來說也很直覺。
+
 - 要印給輔導組，照號碼排
 
 - 123456789123
@@ -41,6 +45,9 @@ To be updated.
 
 - Tutorial pages with screenshots
 - Chrome modification.
+  - https://stackoverflow.com/questions/2541949/problems-with-jquery-getjson-using-local-files-in-chrome
+  - MAC: open /Applications/Google\ Chrome.app --args --allow-file-access-from-files
+  - http://eureka.ykyuen.info/2013/09/24/chrome-bypass-access-control-allow-origin-on-local-file-system/
 
 - Online version.
 - Online version should only accepct password request from accounts with @apa.gov.tw suffix
