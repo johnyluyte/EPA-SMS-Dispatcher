@@ -1,0 +1,215 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>環保役男志願預排</title>
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap/flaty.min.css">
+    <style type="text/css">
+      body{
+        padding:10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+<h1>EPA SMS Dispatcher</h1>
+
+<p><img src="img/overview.png" alt="" /></p>
+
+<p>This is a simple system for <a href="http://www.epa.gov.tw/mp.asp">Environmental Protection Agency</a> to dispatch its <a href="https://en.wikipedia.org/wiki/Alternative_civilian_service">Substitute Military Service</a> personnel.</p>
+
+<p>Although this system is designed for EPA, it can be easily modified to fit other departments as well.</p>
+
+<h2>Demo</h2>
+
+<p><a href="http://chunnorris.net/public/epa/index.html">Demo page (142T)</a></p>
+
+<h2>步驟</h2>
+
+<ol>
+<li>事前準備，修改役男人數、各縣市名額等參數</li>
+<li>整理役男名單，並彙整成此系統可接受的格式</li>
+<li>開始預排</li>
+<li>儲存並列印預排之結果</li>
+</ol>
+
+
+<h2>步驟說明</h2>
+
+<h3>（一）修改參數</h3>
+
+<ol>
+<li>依照這一梯的役男總人數修改 <strong>region.json</strong> 的 total_students 欄位</li>
+<li>依照這一梯各縣市的名額修改 <strong>region.json</strong> 的 available 欄位
+<img src="img/json1.png" alt="" /></li>
+</ol>
+
+
+<h3>（二）外部匯入資料之格式</h3>
+
+<p>除了手動輸入外，也可以從檔案直接匯入資料。
+外部匯入的資料必須符合下列格式：</p>
+
+<ol>
+<li>必須是以 <strong>UTF-8</strong> 編碼儲存的 csv 檔案。</li>
+<li>csv 表格內總共三欄，第一欄為號碼、第二欄為戶籍地、第三欄為分數。如圖片：<img src="img/csv1.png" alt="" /></li>
+</ol>
+
+
+<p>若需範例，請參考 <em>demo</em> 資料夾內的 csv 檔案。</p>
+
+<p><strong>Please <a href="http://wen198599.pixnet.net/blog/post/22314819-%5B%E5%BC%95%E7%94%A8%5Dexcel%E9%96%8B%E5%95%9Fcsv%E6%AA%94%E7%9A%84%E8%8A%B1%E5%BC%8F%E6%8A%80%E5%B7%A7">make sure the input file is encoded with UTF-8 (without BOM)</a></strong></p>
+
+<h4>＠微軟使用者注意事項</h4>
+
+<p>Microsoft Office Excel 預設是以 Big5 編碼儲存檔案，因此我們存檔時必須手動選擇 UTF-8 編碼，步驟如下：</p>
+
+<ol>
+<li>另存新檔案 -> 選擇 csv <img src="img/csv1.png" alt="" /></li>
+<li>選擇工具 -> 網路選項 <img src="img/csv1.png" alt="" /></li>
+<li>選擇編碼 -> 選擇 UTF-8 編碼 <img src="img/csv1.png" alt="" /></li>
+<li>儲存檔案</li>
+</ol>
+
+
+<h3>（三）開始預排</h3>
+
+<ol>
+<li>開啟 Firefox 瀏覽器，若尚未安裝可以<a href="https://mozilla.com.tw/firefox/new/">由此下載</a></li>
+<li>從 github 下載，解壓縮後開啟 index.html <img src="img/githubFork1.png" alt="" /></li>
+<li>點選左上角的瀏覽按鈕，讀取之前的 csv 或是 txt 檔案當作範例，並按下下方的開始預排
+<img src="img/load1.png" alt="" /></li>
+</ol>
+
+
+<p>以此範例向役男講解本系統：</p>
+
+<blockquote><ol>
+<li>平均分數</li>
+<li>區域名額與加減人數</li>
+<li>上方顏色說明（分發規則說明）</li>
+<li>尚未分配到的學號、點選可自動搜尋最佳落點</li>
+</ol>
+</blockquote>
+
+<p><img src="img/explain1.png" alt="" /></p>
+
+<p>接著講解預排的規則、正式分發的步驟</p>
+
+<blockquote><ol>
+<li>被點到號碼的役男請大聲說出自己的志願</li>
+<li>當切換到自己所屬的頁面時，請檢查自己的戶籍地與成績是否正確</li>
+<li>每回合結束後，會有三到五分鐘討論時間</li>
+<li>告知預排截止時間</li>
+<li>講解正式分發時的規則</li>
+<li>詢問是否有不懂分發規則的，或有其他疑問</li>
+</ol>
+</blockquote>
+
+<p>接下來開始正式預排</p>
+
+<ol>
+<li>重新整理頁面，並讀取這梯的 csv 或是 txt 檔</li>
+<li>第一輪：一個一個叫號碼，選擇志願。家因優先者若戶籍地沒開缺額，可以優先選擇戶籍地周圍縣市</li>
+<li>存擋、看預排結果、討論</li>
+<li>第二輪：一到十號想修改志願的舉手，依此類推</li>
+<li>存擋、看預排結果、討論</li>
+<li>第三輪之後，想修改的直接舉手</li>
+<li>當尚未分配到的人數越來越少時，可以直接點選其號碼，系統會提示這個號碼還剩哪些地方可以選擇</li>
+</ol>
+
+
+<p>請記得每次按下預排按鈕前都先存擋（txt檔），以避免突發狀況造成資料流失、影響預排時間。</p>
+
+<p>預排結束後，可讓役男們拍照留念，也可截圖備份，並按下右下角輸出表格。</p>
+
+<h2>其他設定</h2>
+
+<p>js/global.js 內的 printRound_N 可以改變預排結果的縣市欄位中，顯示幾筆資料後才換行</p>
+
+<pre><code>printRound_N = 3; // 每三筆資料就換行
+</code></pre>
+
+<p><img src="img/printRound1.png" alt="" /></p>
+
+<pre><code>printRound_N = 6; // 每六筆資料才換行
+</code></pre>
+
+<p><img src="img/printRound2.png" alt="" /></p>
+
+<p>js/global.js 內的 fontColors{} 可以改變不同階段錄取的顏色</p>
+
+<p>使用不同顏色來代表 不同階段錄取 的役男</p>
+
+<pre><code>fontColors = {
+  type1 : "black", // 第一階段錄取（分數大於均標，戶籍地）
+  type2 : "#229922", // 第二階段錄取（分數大於均標，非戶籍地）
+  type3 : "#0000dd", // 第三階段錄取（分數低於均標，戶籍地）
+  type4 : "#4488ff", // 第四階段錄取（分數低於均標，非戶籍地）
+  // typeDefault : "black", // 預設顏色
+  typeHome : "orange", // 家因顏色
+  typeKicked : "red", // 選某個地區時，被擠掉的人的顏色
+  leftOver : "red", // 本回合結束後，尚未分配到服勤單位的顏色
+  shortage : "blue", // 地區人數短缺時的顏色
+  overheat : "red" // 地區人數過多時的顏色
+};
+</code></pre>
+
+<h2>Note</h2>
+
+<p>Actually, the offilne version can save data in the browser's storage. But most employees prefer txt files.</p>
+
+<h2>Todo Lists</h2>
+
+<ul>
+<li>增加 “全部清除” 按鈕 (F5)</li>
+<li>要印給輔導組，照號碼排</li>
+<li>123456789123</li>
+<li>裝 firefox, notepad++, D碟不會自動回復</li>
+<li>Tutorial pages with screenshots</li>
+<li>Chrome modification.
+
+<ul>
+<li>https://stackoverflow.com/questions/2541949/problems-with-jquery-getjson-using-local-files-in-chrome</li>
+<li>MAC: open /Applications/Google\ Chrome.app --args --allow-file-access-from-files</li>
+<li>http://eureka.ykyuen.info/2013/09/24/chrome-bypass-access-control-allow-origin-on-local-file-system/</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>License</h2>
+
+<p>This project is licensed under the terms of the <a href="http://opensource.org/licenses/MIT">MIT license</a>.</p>
+
+<p>Please note that this project is built with materials from the following parties:</p>
+
+<ul>
+<li><a href="http://getbootstrap.com/">Bootstrap</a></li>
+<li><a href="http://bootswatch.com/flatly/">flatly</a></li>
+<li><a href="https://jquery.com/">jQuery</a></li>
+</ul>
+
+
+<p>Please also refer to their Licenses for further information.</p>
+
+      <footer>
+        環保役役男志願預排系統 -
+        <a href="tutorial.html" target="_blank">使用說明</a> -
+        Built with
+        <a href='http://getbootstrap.com/' target='_blank'>Bootstrap</a> /
+        <a href='http://bootswatch.com/flatly/' target='_blank'> flatly</a> /
+        <a href='https://jquery.com/' target='_blank'>jQuery</a> -
+
+        By <a href='mailto:johnyluyte@gmail.com'>Chun Chien</a>,
+        licensed under the <a href='http://opensource.org/licenses/MIT' target='_blank'>MIT License</a>.
+        Fork me on <a href='https://github.com/johnyluyte/EPA-SMS-Dispatcher' target='_blank'>Github</a>.<br/>
+      </footer>
+
+    </div> <!-- /container -->
+  <script src="lib/jquery1.11.1.min.js"></script>
+
+  <script src="lib/bootstrap/bootstrap.min.js"></script>
+  </body>
+</html>
