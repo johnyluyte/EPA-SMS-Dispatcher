@@ -1,7 +1,7 @@
 {
   "_comment_info": "這裡是 各地區中文名稱 與 相對應之變數名稱 的對照表，各 js 都會讀取本檔案，並以本內容為依據。",
   "_comment_author": "有問題請聯絡 johnyluyte@gmail.com",
-  "_comment_example":[
+  "_comment_example": [
     {
       "id": "就是id，基本上不要動：（22）",
       "name": "地區之中文名稱，會出現在選志願的選單：（花蓮縣環保局）",
@@ -10,6 +10,7 @@
       "available": "地區之役男開放名額：（2）"
     }
   ],
+  "total_students": 50,
   "regionLists": [
     {
       "id": 0,
