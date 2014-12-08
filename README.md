@@ -44,9 +44,9 @@ Although this system is designed for EPA, it can be easily modified to fit other
 
 Microsoft Office Excel 預設是以 Big5 編碼儲存檔案，因此我們存檔時必須手動選擇 UTF-8 編碼，步驟如下：
 
-1. 另存新檔案 -> 選擇 csv ![](img/csv1.png)
-2. 選擇工具 -> 網路選項 ![](img/csv1.png)
-3. 選擇編碼 -> 選擇 UTF-8 編碼 ![](img/csv1.png)
+1. 另存新檔案 -> 選擇 csv ![]()
+2. 選擇工具 -> 網路選項 ![]()
+3. 選擇編碼 -> 選擇 UTF-8 編碼 ![]()
 4. 儲存檔案
 
 ### （三）開始預排
