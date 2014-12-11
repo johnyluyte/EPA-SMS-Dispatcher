@@ -20,7 +20,9 @@ function initBtnLoadFromFile(){
           fillSelectOptions(i+1,words); // i+1 Because StudentId starts from 1, not 0
         }
       }
-      fileReader.readAsText(file);
+      // use readAsText(file) for UTF-8;
+      // use readAsText(file,'big5') for ANSI, Mircro$oft Excel are encoded in ANSI by default
+      fileReader.readAsText(file,'big5');
     } else {
       alert("Failed to load file");
     }
