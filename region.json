@@ -10,6 +10,9 @@
       "available": "地區之役男開放名額：（2）"
     }
   ],
+  "_comment_what_T": "第幾梯",
+  "what_T": 143,
+  "_comment_total_students": "這梯有多少役男",
   "total_students": 50,
   "regionLists": [
     {

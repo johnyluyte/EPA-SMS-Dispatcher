@@ -23,6 +23,7 @@ $(function(){
 function loadJSON(){
   $.getJSON(JSON_FILE_NAME, function(data) {
     // Assign json contents to Global variable "regionDatas".
+    WHAT_T = data.what_T;
     TOTAL_STUDENT = data.total_students;
     var list = data.regionLists;
     for(var i=0;i<list.length;i++){
