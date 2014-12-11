@@ -36,10 +36,13 @@ function initAlgo(){
     // Add to lists
     students[i-1] = student;
 
+    // 處理臨時被驗退的
     if($('#score'+i).val()==="NA"){
+      students[i-1].result = "NA"; // 要給予跟 NO_REGION_RESULT 不一樣的值
       not_here_student++;
       continue;
     }
+
     // parserInt() used to cause lost of digits. Fixed: 2014, Oct 29
     avgScore += parseFloat(student.score);
   }
@@ -53,7 +56,7 @@ function initAlgo(){
 function createResultPanel(printToDivID){
   var str = '<div class="panel panel-info">';
   str += '<div class="panel-heading">';
-  str += '<h3 class="panel-title">分配結果(平均分數：'+avgScore+')</h3>';
+  str += '<h3 class="panel-title">第 ' + WHAT_T + ' 梯 預排結果 ( 平均分數：'+avgScore+' )</h3>';
   str += '</div>';
   str += '<div class="panel-body" id="div_dispatchResult">';
   str += '<ul class="nav nav-tabs">';
