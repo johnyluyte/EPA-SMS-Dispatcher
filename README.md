@@ -30,6 +30,8 @@ Although this system is designed for EPA, it can be easily modified to fit other
 
 ### （二）外部匯入資料之格式
 
+檔案 -> 新增 -> 空白活頁簿
+
 除了手動輸入外，也可以從檔案直接匯入資料。
 外部匯入的資料必須符合下列格式：
 
@@ -128,6 +130,10 @@ Actually, the offilne version can save data in the browser's storage. But most e
 
 ## Todo Lists
 
+- 臨時驗退的 ex 7號，戶籍地留下，分數變 NA，不算入平均，總人數怎麼辦
+  - 如果遇到這種情形，總人數還是填 50 人，而不是 49 人
+  - 在 143T_input.csv 內，一樣要把 7 號的學號，戶籍地 留下，但是在分數欄位填入 "NA"
+- 台北市 跟 臺北市 到底要用哪個？？
 - 增加 “全部清除” 按鈕 (F5)
 - 要印給輔導組，照號碼排
 - 123456789123

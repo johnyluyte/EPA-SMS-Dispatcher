@@ -13,6 +13,11 @@ function initBtnStartAlgo(){
 
 // 初始化變數、將 html 清空
 function initAlgo(){
+  // 有時會發生役男進來後，才臨時驗退的情形，我們會在其分數欄位填入 "NA" ，在算平均成績時不把他算進去
+  // 注意這裡只是預設值，當程式執行時，此預設值會被算出的值取代
+  // Fixed: 2014, Dec, 11
+  var not_here_student = 0;
+
   students = new Array();
   avgScore = 0.0;
   for(x in regionDatas){
@@ -30,10 +35,15 @@ function initAlgo(){
     student.homeFirst = $('#homeFirst'+i).is(':checked');
     // Add to lists
     students[i-1] = student;
+
+    if($('#score'+i).val()==="NA"){
+      not_here_student++;
+      continue;
+    }
     // parserInt() used to cause lost of digits. Fixed: 2014, Oct 29
     avgScore += parseFloat(student.score);
   }
-  avgScore = avgScore/TOTAL_STUDENT;
+  avgScore = avgScore/(TOTAL_STUDENT-not_here_student);
   var size = Math.pow(10, 2);
   avgScore = Math.round(avgScore * size) / size;
 }

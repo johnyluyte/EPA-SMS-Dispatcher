@@ -9,7 +9,6 @@ var IS_HOME_FIRST = "homeFirst";
 // 此役男不是家因因素的話，在輸出的檔案顯示下列字串
 var IS_NOT_HOME_FIRST = "none";
 
-
 // 這梯是第幾梯，注意這裡只是預設值，當程式執行時，此預設值會被 json 檔內的 what_T 取代
 var WHAT_T = 140;
 // 替代役男總數，注意這裡只是預設值，當程式執行時，此預設值會被 json 檔內的 total_students 取代
