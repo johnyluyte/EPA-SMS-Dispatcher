@@ -65,7 +65,8 @@ function createResultPanel(printToDivID){
   str += '<div class="panel-fotter">';
   str += '  <div class="btn-group btn-group-justified">';
   str += '    <a href="" class="btn btn-primary" id="btn_downloadTXT">下載程式可讀取的格式(.txt)</a>';
-  str += '    <a href="" class="btn btn-success" id="btn_downloadCSV">輸出表格給輔導組(.csv)</a>';
+  str += '    <a href="" class="btn btn-info" id="btn_downloadCSVRegion">給輔導組(照地區.csv)</a>';
+  str += '    <a href="" class="btn btn-success" id="btn_downloadCSVPersonnel">給輔導組(照個人.csv)</a>';
   str += '  </div>';
   str += '</div>';
   str += '</div>';
