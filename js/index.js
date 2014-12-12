@@ -3,7 +3,7 @@ var confirmOnPageExit = function (e)
 {
   // If we haven't been passed the event get the window.event
   e = e || window.event;
-  var message = 'Any text will block the navigation and display a prompt';
+  var message = '提醒您，離開頁面前請記得存檔，尚未存檔的資訊都將遺失。';
   // For IE6-8 and Firefox prior to version 4
   if (e)
   {

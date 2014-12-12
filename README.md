@@ -8,7 +8,8 @@ Although this system is designed for EPA, it can be easily modified to fit other
 
 ## Demo
 
-[Demo page (142T)](http://chunnorris.net/public/epa/index.html)
+[Demo page](http://chunnorris.net/demo/epa-sms/index.html)
+[Demo file](http://chunnorris.net/demo/epa-sms/demo.txt)
 
 
 ## 步驟
