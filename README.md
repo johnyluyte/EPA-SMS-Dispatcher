@@ -8,9 +8,17 @@ Although this system is designed for EPA, it can be easily modified to fit other
 
 ## Demo
 
-[Demo page](http://chunnorris.net/demo/epa-sms/index.html)
+Demo page:
 
-[Demo file](http://chunnorris.net/demo/epa-sms/demo.txt)
+- [http://chunnorris.net/demo/epa-sms/](http://chunnorris.net/demo/epa-sms/)
+
+Demo files:
+
+- [Sample Input (txt)](http://chunnorris.net/demo/epa-sms/sample/sample_input.txt)
+- [Sample Output Personnel (csv)](http://chunnorris.net/demo/epa-sms/sample/sample_output_personnel.csv)
+- [Sample Output Personnel (jpg)](http://chunnorris.net/demo/epa-sms/sample/sample_output_personnel.jpg)
+- [Sample Output Region (csv)](http://chunnorris.net/demo/epa-sms/sample/sample_output_region.csv)
+- [Sample Output Region (jpg)](http://chunnorris.net/demo/epa-sms/sample/sample_output_region.jpg)
 
 
 ## 步驟
