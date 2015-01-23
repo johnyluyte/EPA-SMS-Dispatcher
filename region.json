@@ -11,79 +11,79 @@
     }
   ],
   "_comment_what_T": "第幾梯",
-  "what_T": 143,
+  "what_T": 145,
   "_comment_total_students": "這梯有多少役男",
-  "total_students": 50,
+  "total_students": 25,
   "regionLists": [
     {
       "id": 0,
       "name": "本署",
       "homeName": "本署",
       "shortName": "本署",
-      "available": 0
+      "available": 5
     },
     {
       "id": 1,
       "name": "環訓所",
       "homeName": "環訓所",
       "shortName": "環訓",
-      "available": 2
+      "available": 1
     },
     {
       "id": 2,
       "name": "環檢驗所",
       "homeName": "環檢所",
       "shortName": "環檢",
-      "available": 2
+      "available": 0
     },
     {
       "id": 3,
       "name": "警政署環保警察隊",
       "homeName": "環警",
       "shortName": "環警",
-      "available": 0
+      "available": 1
     },
     {
       "id": 4,
       "name": "基隆市環保局",
       "homeName": "基隆市",
       "shortName": "基隆",
-      "available": 1
+      "available": 0
     },
     {
       "id": 5,
       "name": "台北市政府環保局",
       "homeName": "台北市",
       "shortName": "台北",
-      "available": 1
+      "available": 2
     },
     {
       "id": 6,
       "name": "新北市政府環保局",
       "homeName": "新北市",
       "shortName": "新北",
-      "available": 4
+      "available": 0
     },
     {
       "id": 7,
-      "name": "桃園縣政府環保局",
-      "homeName": "桃園縣",
+      "name": "桃園市政府環保局",
+      "homeName": "桃園市",
       "shortName": "桃園",
-      "available": 4
+      "available": 0
     },
     {
       "id": 8,
       "name": "新竹市環保局",
       "homeName": "新竹市",
       "shortName": "竹市",
-      "available": 4
+      "available": 1
     },
     {
       "id": 9,
       "name": "新竹縣政府環保局",
       "homeName": "新竹縣",
       "shortName": "竹縣",
-      "available": 3
+      "available": 1
     },
     {
       "id": 10,
@@ -97,49 +97,49 @@
       "name": "台中市政府環保局",
       "homeName": "臺中市",
       "shortName": "台中",
-      "available": 2
+      "available": 3
     },
     {
       "id": 12,
       "name": "彰化縣環保局",
       "homeName": "彰化縣",
       "shortName": "彰化",
-      "available": 4
+      "available": 0
     },
     {
       "id": 13,
       "name": "南投縣政府環保局",
       "homeName": "南投縣",
       "shortName": "南投",
-      "available": 2
+      "available": 0
     },
     {
       "id": 14,
       "name": "雲林縣環保局",
       "homeName": "雲林縣",
       "shortName": "雲林",
-      "available": 4
+      "available": 0
     },
     {
       "id": 15,
       "name": "嘉義市環境保護局",
       "homeName": "嘉義市",
       "shortName": "嘉市",
-      "available": 2
+      "available": 3
     },
     {
       "id": 16,
       "name": "嘉義縣環保局",
       "homeName": "嘉義縣",
       "shortName": "嘉縣",
-      "available": 1
+      "available": 0
     },
     {
       "id": 17,
       "name": "台南市政府環保局",
       "homeName": "臺南市",
       "shortName": "台南",
-      "available": 1
+      "available": 0
     },
     {
       "id": 18,
@@ -161,21 +161,21 @@
       "name": "屏東縣環保局",
       "homeName": "屏東縣",
       "shortName": "屏東",
-      "available": 2
+      "available": 0
     },
     {
       "id": 21,
       "name": "宜蘭縣政府環保局",
       "homeName": "宜蘭縣",
       "shortName": "宜蘭",
-      "available": 3
+      "available": 1
     },
     {
       "id": 22,
       "name": "花蓮縣環保局",
       "homeName": "花蓮縣",
       "shortName": "花蓮",
-      "available": 2
+      "available": 1
     },
     {
       "id": 23,
