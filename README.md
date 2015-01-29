@@ -21,7 +21,7 @@ Demo files:
 - [Sample Output Region (jpg)](http://chunnorris.net/demo/epa-sms/sample/sample_output_region.jpg)
 
 
-## 步驟
+## （零）步驟總覽
 
 1. 事前準備，修改役男人數、各縣市名額等參數。
 2. 整理役男名單，並彙整成此系統可接受的格式。
@@ -62,7 +62,7 @@ Demo files:
 
 ![](img/step4.png)
 
-(3) 貼上時，記得選擇"貼上純值"
+(3) 貼上時，記得選擇"貼上純值"，若分數超過小數點兩位也沒關係，不用刻意編輯。
 
 ![](img/step3.png)
 
@@ -78,7 +78,7 @@ Demo files:
 
 (6) 關閉檔案，此時選擇不要儲存(剛剛已經儲存過了)
 
-![](img/step8.png) TODO: 圖片要更新
+![](img/step8.png)
 
 ### 特殊情形
 
