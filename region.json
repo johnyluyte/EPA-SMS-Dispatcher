@@ -11,16 +11,16 @@
     }
   ],
   "_comment_what_T": "第幾梯",
-  "what_T": 145,
+  "what_T": 146,
   "_comment_total_students": "這梯有多少役男",
-  "total_students": 25,
+  "total_students": 45,
   "regionLists": [
     {
       "id": 0,
       "name": "本署",
       "homeName": "本署",
       "shortName": "本署",
-      "available": 5
+      "available": 3
     },
     {
       "id": 1,
@@ -41,7 +41,7 @@
       "name": "警政署環保警察隊",
       "homeName": "環警",
       "shortName": "環警",
-      "available": 1
+      "available": 5
     },
     {
       "id": 4,
@@ -55,7 +55,7 @@
       "name": "台北市政府環保局",
       "homeName": "台北市",
       "shortName": "台北",
-      "available": 2
+      "available": 5
     },
     {
       "id": 6,
@@ -69,7 +69,7 @@
       "name": "桃園市政府環保局",
       "homeName": "桃園市",
       "shortName": "桃園",
-      "available": 0
+      "available": 4
     },
     {
       "id": 8,
@@ -83,56 +83,56 @@
       "name": "新竹縣政府環保局",
       "homeName": "新竹縣",
       "shortName": "竹縣",
-      "available": 1
+      "available": 0
     },
     {
       "id": 10,
       "name": "苗栗縣政府環保局",
       "homeName": "苗栗縣",
       "shortName": "苗栗",
-      "available": 2
+      "available": 1
     },
     {
       "id": 11,
       "name": "台中市政府環保局",
       "homeName": "臺中市",
       "shortName": "台中",
-      "available": 3
+      "available": 5
     },
     {
       "id": 12,
       "name": "彰化縣環保局",
       "homeName": "彰化縣",
       "shortName": "彰化",
-      "available": 0
+      "available": 5
     },
     {
       "id": 13,
       "name": "南投縣政府環保局",
       "homeName": "南投縣",
       "shortName": "南投",
-      "available": 0
+      "available": 5
     },
     {
       "id": 14,
       "name": "雲林縣環保局",
       "homeName": "雲林縣",
       "shortName": "雲林",
-      "available": 0
+      "available": 2
     },
     {
       "id": 15,
       "name": "嘉義市環境保護局",
       "homeName": "嘉義市",
       "shortName": "嘉市",
-      "available": 3
+      "available": 0
     },
     {
       "id": 16,
       "name": "嘉義縣環保局",
       "homeName": "嘉義縣",
       "shortName": "嘉縣",
-      "available": 0
+      "available": 2
     },
     {
       "id": 17,
@@ -146,7 +146,7 @@
       "name": "高雄市政府環保局",
       "homeName": "高雄市",
       "shortName": "高市",
-      "available": 2
+      "available": 3
     },
     {
       "id": 19,
@@ -154,7 +154,7 @@
       "homeName": "高雄市",
       "_comment_homeName": "這裡使用高雄市是因為：高雄市戶籍的人也可以優先選高雄海洋局。",
       "shortName": "高海",
-      "available": 1
+      "available": 0
     },
     {
       "id": 20,
@@ -168,21 +168,21 @@
       "name": "宜蘭縣政府環保局",
       "homeName": "宜蘭縣",
       "shortName": "宜蘭",
-      "available": 1
+      "available": 0
     },
     {
       "id": 22,
       "name": "花蓮縣環保局",
       "homeName": "花蓮縣",
       "shortName": "花蓮",
-      "available": 1
+      "available": 2
     },
     {
       "id": 23,
       "name": "台東縣環保局",
       "homeName": "台東縣",
       "shortName": "台東",
-      "available": 1
+      "available": 0
     },
     {
       "id": 24,
@@ -196,7 +196,7 @@
       "name": "連江縣政府環保局",
       "homeName": "連江縣",
       "shortName": "連江",
-      "available": 0
+      "available": 1
     }
   ]
 }
