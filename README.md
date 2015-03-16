@@ -10,15 +10,15 @@ Although this system is designed for EPA, it can be easily modified to fit other
 
 Demo page:
 
-- [http://chunnorris.net/demo/epa-sms/](http://chunnorris.net/demo/epa-sms/)
+- [http://chunnorris.cc/demo/epa-sms/](http://chunnorris.cc/demo/epa-sms/)
 
 Demo files:
 
-- [Sample Input (txt)](http://chunnorris.net/demo/epa-sms/sample/sample_input.txt)
-- [Sample Output Personnel (csv)](http://chunnorris.net/demo/epa-sms/sample/sample_output_personnel.csv)
-- [Sample Output Personnel (jpg)](http://chunnorris.net/demo/epa-sms/sample/sample_output_personnel.jpg)
-- [Sample Output Region (csv)](http://chunnorris.net/demo/epa-sms/sample/sample_output_region.csv)
-- [Sample Output Region (jpg)](http://chunnorris.net/demo/epa-sms/sample/sample_output_region.jpg)
+- [Sample Input (txt)](http://chunnorris.cc/demo/epa-sms/sample/sample_input.txt)
+- [Sample Output Personnel (csv)](http://chunnorris.cc/demo/epa-sms/sample/sample_output_personnel.csv)
+- [Sample Output Personnel (jpg)](http://chunnorris.cc/demo/epa-sms/sample/sample_output_personnel.jpg)
+- [Sample Output Region (csv)](http://chunnorris.cc/demo/epa-sms/sample/sample_output_region.csv)
+- [Sample Output Region (jpg)](http://chunnorris.cc/demo/epa-sms/sample/sample_output_region.jpg)
 
 
 ## （零）步驟總覽
